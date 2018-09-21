@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DateFormat ClassName 1`] = `
+<span
+  className="test_class"
+>
+  02.12.2012 00:00
+</span>
+`;
+
+exports[`DateFormat Date value 1`] = `
+<span
+  className="test_class"
+>
+  09.09.2001
+</span>
+`;
+
+exports[`DateFormat Default props 1`] = `
+<span
+  className=""
+>
+  02.12.2012 00:00
+</span>
+`;
+
+exports[`DateFormat Default value 1`] = `
+<span
+  className=""
+>
+  02.12.2012 00:00
+</span>
+`;
+
+exports[`DateFormat Masks value 1`] = `
+<span
+  className="test_class"
+>
+  02.12.2012
+</span>
+`;
+
+exports[`DateFormat Null value 1`] = `
+<span>
+  not date
+</span>
+`;

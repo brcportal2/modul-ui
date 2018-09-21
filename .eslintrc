@@ -1,0 +1,69 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "modules": true,
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "es6":true,
+    "node": true
+  },
+  "globals": {
+    "$": true
+  },
+  "extends": ["eslint:recommended"],
+  "plugins": ["react"],
+  "rules": {
+    "no-console": [2],
+    "no-alert": [2],
+    "no-unused-vars": [2, {"ignoreRestSiblings": true}],
+    "max-len": [2, {
+      "code": 120,
+      "ignoreUrls": true,
+      "ignoreComments": true,
+      "tabWidth": 4,
+      "ignoreRegExpLiterals": true,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true
+    }],
+    "no-mixed-spaces-and-tabs": [2],
+    "semi": [2],
+    "object-curly-spacing": [2],
+    "key-spacing": [2, {"beforeColon": false, "afterColon": true}],
+    "arrow-parens": [2, "as-needed"],
+    "padded-blocks": [2, "never"],
+    "keyword-spacing": [2, {"after": true, "before": true}],
+    "indent": [2, "tab", {
+      "SwitchCase": 1,
+      "ArrayExpression": 1,
+      "ObjectExpression": 1,
+      "CallExpression": {"arguments": 1},
+      "FunctionExpression": {"parameters": 1},
+      "MemberExpression": 1
+    }],
+    "comma-dangle": [2, {
+      "arrays": "only-multiline",
+      "objects": "only-multiline",
+      "imports": "only-multiline",
+      "exports": "only-multiline",
+      "functions": "ignore"
+    }],
+    "react/jsx-uses-react": [1],
+    "react/jsx-uses-vars": [1],
+    "react/jsx-indent": [2, "tab"],
+    "react/jsx-tag-spacing": [2, {
+      "afterOpening": "never",
+      "beforeSelfClosing": "always",
+      "closingSlash": "never"
+    }],
+    "react/jsx-boolean-value": [2, "never"],
+    "react/self-closing-comp": [2],
+    "react/prop-types": [2]
+  }
+}

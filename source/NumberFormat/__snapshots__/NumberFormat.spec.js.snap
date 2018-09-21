@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NumberFormat Big value 1`] = `
+<span
+  className="test_class"
+>
+  1 234 567 890
+</span>
+`;
+
+exports[`NumberFormat ClassName 1`] = `
+<span
+  className="test_class"
+>
+  123 456
+</span>
+`;
+
+exports[`NumberFormat Default props 1`] = `
+<span
+  className=""
+>
+  123 456
+</span>
+`;
+
+exports[`NumberFormat Default value 1`] = `
+<span
+  className=""
+>
+  123 456
+</span>
+`;
+
+exports[`NumberFormat First zero 1`] = `
+<span
+  className="test_class"
+>
+  123
+</span>
+`;
+
+exports[`NumberFormat Null value 1`] = `
+<span
+  className="test_class"
+>
+  not date
+</span>
+`;

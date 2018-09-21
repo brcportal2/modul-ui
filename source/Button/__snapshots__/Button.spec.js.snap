@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Default props 1`] = `
+<button
+  className=" "
+  disabled={false}
+  type="button"
+>
+  Test
+</button>
+`;
+
+exports[`Button Disabled 1`] = `
+<button
+  className=" "
+  disabled={true}
+  type="button"
+>
+  Test
+</button>
+`;
+
+exports[`Button Loading && className 1`] = `
+<button
+  className="test_class loader"
+  disabled={true}
+  type="button"
+>
+  Test
+</button>
+`;
+
+exports[`Button Loading 1`] = `
+<button
+  className=" loader"
+  disabled={true}
+  type="button"
+>
+  Test
+</button>
+`;
+
+exports[`Button Type 1`] = `
+<button
+  className=" "
+  disabled={false}
+  type="button"
+>
+  Test
+</button>
+`;
+
+exports[`Button Type 2`] = `
+<button
+  className=" "
+  disabled={false}
+  type="reset"
+>
+  Test
+</button>
+`;
+
+exports[`Button Type 3`] = `
+<button
+  className=" "
+  disabled={false}
+  type="submit"
+>
+  Test
+</button>
+`;

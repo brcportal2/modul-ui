@@ -1,0 +1,80 @@
+{
+  "name": "modul-ui",
+  "version": "2.0.0",
+  "description": "ModulBank UI React Components",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ./sandbox ./source -f table --ext .js --ext .jsx || true",
+    "lint:staged": "lint-staged",
+    "pub": "gulp",
+    "start": "webpack-dev-server",
+    "build": "rm -rf dist && webpack",
+    "test": "jest"
+  },
+  "dependencies": {
+    "accounting": "^0.4.1",
+    "imask": "^4.0.0",
+    "jquery-datetimepicker": "^2.5.20",
+    "modul-helpers": "^0.1.106",
+    "react-modal": "^3.5.1",
+    "react-select": "^2.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=15.6",
+    "react-dom": ">=15.6"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "file-loader": "^2.0.0",
+    "ghooks": "^2.0.4",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-cli": "^2.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.5.0",
+    "lint-staged": "^7.2.2",
+    "mock-geolocation": "^1.0.11",
+    "nib": "^1.1.2",
+    "open-browser-webpack-plugin": "0.0.5",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-router-dom": "^4.3.1",
+    "react-test-renderer": "^16.4.2",
+    "style-loader": "^0.23.0",
+    "stylus-loader": "^3.0.2",
+    "url-loader": "^1.1.1",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint"
+    ]
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run lint:staged",
+      "pre-push": "npm run test"
+    }
+  },
+  "prepush": [
+    "npm run test"
+  ],
+  "license": "ISC"
+}

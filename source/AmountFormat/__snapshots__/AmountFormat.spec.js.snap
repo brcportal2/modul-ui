@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AmountFormat Big value 1`] = `
+<span
+  className="test_class"
+>
+  1 234 567 890.00
+   
+  <span
+    className="cur ruble"
+  >
+    <span>
+      р.
+    </span>
+  </span>
+</span>
+`;
+
+exports[`AmountFormat ClassName 1`] = `
+<span
+  className="test_class"
+>
+  123 456.00
+   
+  <span
+    className="cur ruble"
+  >
+    <span>
+      р.
+    </span>
+  </span>
+</span>
+`;
+
+exports[`AmountFormat Currency EUR 1`] = `
+<span
+  className="test_class"
+>
+  1 234 567 890.00
+   
+  <span
+    className="cur euro"
+  >
+    <span>
+      €
+    </span>
+  </span>
+</span>
+`;
+
+exports[`AmountFormat Currency RUR 1`] = `
+<span
+  className="test_class"
+>
+  1 234 567 890.00
+   
+  <span
+    className="cur ruble"
+  >
+    <span>
+      р.
+    </span>
+  </span>
+</span>
+`;
+
+exports[`AmountFormat Currency USD 1`] = `
+<span
+  className="test_class"
+>
+  1 234 567 890.00
+   
+  <span
+    className="cur dollar"
+  >
+    <span>
+      $
+    </span>
+  </span>
+</span>
+`;
+
+exports[`AmountFormat Default props 1`] = `
+<span
+  className=""
+>
+  123 456.00
+   
+  <span
+    className="cur ruble"
+  >
+    <span>
+      р.
+    </span>
+  </span>
+</span>
+`;
+
+exports[`AmountFormat Default value 1`] = `
+<span
+  className=""
+>
+  123 456.00
+   
+  <span
+    className="cur ruble"
+  >
+    <span>
+      р.
+    </span>
+  </span>
+</span>
+`;
+
+exports[`AmountFormat First zero 1`] = `
+<span
+  className="test_class"
+>
+  123.00
+   
+  <span
+    className="cur ruble"
+  >
+    <span>
+      р.
+    </span>
+  </span>
+</span>
+`;
+
+exports[`AmountFormat Null value 1`] = `
+<span
+  className="test_class"
+>
+  not date
+</span>
+`;
