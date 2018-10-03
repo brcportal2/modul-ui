@@ -1,88 +1,72 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import Button from 'Button';
-
 import ModalPopup from './ModalPopup';
+import q from 'q';
+/**
+ * Попап с контентом
+ */
+class ContentPopup extends React.Component {
+	static defaultProps = {
+		closeName: null,
+		shouldCloseOnOverlayClick: false,
+		disableClose: false,
+		className: ''
+	};
 
+	open() {
+		this.dialog._open();
+		this.defer = q.defer();
+		return this.defer.promise;
+	}
 
-export default class ContentPopup extends Component {
-    static propTypes = {
-        shouldCloseOnOverlayClick: PropTypes.bool,
-        disableClose: PropTypes.bool,
-        closeName: PropTypes.bool,
-        className: PropTypes.string,
-        children: PropTypes.element
-    };
+	/*
+	rainur 15.11.2017
+	добавлен метод, что бы можно было добавить еще 1 обработчик.
+	Например по кнопке Сохранить вызываем this.contentPopup.handleCloseMethod, вызывается reject, при закрытии же формы, вызывается resolve.
+	*/
+	handleCloseMethod() {
+		this.dialog._close();
+		this.defer && this.defer.reject();
+	}
 
-    static defaultProps = {
-        disableClose: false,
-        closeName: null,
-        className: ''
-    };
+	close() {
+		this.dialog._close();
+		this.defer && this.defer.resolve();
+	}
 
-    open() {
-        this.dialog._open();
-        this.defer = q.defer();
-        return this.defer.promise;
-    }
+	handleCloseClick() {
+		this.close();
+	}
 
-    close() {
-        this.dialog._close();
-        this.defer && this.defer.resolve();
-    }
+	render() {
+		const {onAfterOpen, shouldCloseOnOverlayClick, closeName, disableClose, className, children}=this.props;
 
-    handleCloseMethod() {
-        this.dialog._close();
-        this.defer && this.defer.reject();
-    }
-
-    handleCloseClick = () => {
-        this.close();
-    };
-
-    render() {
-        const {
-            onAfterOpen,
-            shouldCloseOnOverlayClick,
-
-            disableClose,
-            closeName,
-            className,
-            children
-        } = this.props;
-
-        const _className = [
-            'popup_layer',
-            'popup_action_default',
-            className
-        ].join(' ');
-
-        return (
-            <ModalPopup
-                ref={el => this.dialog = el}
-                onAfterOpen={onAfterOpen}
-                shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
-                onRequestClose={this.handleCloseClick}>
-
-                <div className={_className}>
-                    {disableClose &&
-                    <a
-                        className='popup_close icon-close'
-                        onClick={this.handleCloseClick}
-                    />}
-                    <div>
-                        {children}
-                        {closeName &&
-                        <div>
-                            <Button
-                                onClick={this.handleCloseClick}
-                                className='button small light'
-                            >{closeName}</Button>
-                        </div>}
-                    </div>
-                </div>
-
-            </ModalPopup>
-        );
-    }
+		const classNames = ['popup_layer popup_action_default', className].join(' ');
+		return (
+			<ModalPopup onAfterOpen={onAfterOpen}
+				shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
+				onRequestClose={::this.handleCloseClick}
+				ref={dialog => this.dialog = dialog}>
+				<div className={classNames}>
+					{!disableClose && <a className="popup_close icon-close" onClick={::this.handleCloseClick} />}
+					<div>
+						{children}
+						{closeName && <div className="popup_panel center_xy">
+							<button className="button small light" onClick={::this.handleCloseClick}>{closeName}</button>
+						</div>}
+					</div>
+				</div>
+			</ModalPopup>);
+	}
 }
+
+ContentPopup.propTypes = {
+	onAfterOpen: PropTypes.func,
+	children: PropTypes.object,
+	shouldCloseOnOverlayClick: PropTypes.bool,
+	closeName: PropTypes.string,
+	disableClose: PropTypes.bool,
+	className: PropTypes.string,
+};
+
+export default ContentPopup;
