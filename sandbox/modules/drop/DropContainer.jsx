@@ -31,7 +31,6 @@ export default class DropContainer extends Component {
 						</pre>
 					</div>
 				</flex>
-
 			</ExampleComponent>
 		);
 	}

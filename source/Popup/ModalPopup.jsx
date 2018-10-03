@@ -52,7 +52,10 @@ class ModalPopup extends React.Component {
 
 ModalPopup.propTypes = {
 	parentSelector: PropTypes.func,
-	children: PropTypes.object,
+	children: PropTypes.oneOfType([
+		PropTypes.arrayOf(PropTypes.node),
+		PropTypes.node
+	]),
 	appElement: PropTypes.object,
 	onAfterOpen: PropTypes.func,
 	onRequestClose: PropTypes.func,

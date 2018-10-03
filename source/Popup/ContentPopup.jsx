@@ -62,7 +62,10 @@ class ContentPopup extends React.Component {
 
 ContentPopup.propTypes = {
 	onAfterOpen: PropTypes.func,
-	children: PropTypes.object,
+	children: PropTypes.oneOfType([
+		PropTypes.arrayOf(PropTypes.node),
+		PropTypes.node
+	]),
 	shouldCloseOnOverlayClick: PropTypes.bool,
 	closeName: PropTypes.string,
 	disableClose: PropTypes.bool,

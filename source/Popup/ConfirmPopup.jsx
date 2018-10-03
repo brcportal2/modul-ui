@@ -90,7 +90,10 @@ ConfirmPopup.propTypes = {
 	disableClose: PropTypes.bool,
 	text: PropTypes.string,
 	className: PropTypes.string,
-	children: PropTypes.object,
+	children: PropTypes.oneOfType([
+		PropTypes.arrayOf(PropTypes.node),
+		PropTypes.node
+	]),
 };
 
 export default ConfirmPopup;

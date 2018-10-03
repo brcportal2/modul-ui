@@ -102,7 +102,6 @@ class Drop extends React.Component {
 
 	destroyDrop() {
 		if (this.drop) {
-			ReactDOM.unmountComponentAtNode(this.container);
 			this.drop.close();
 			this.drop.destroy();
 		}
@@ -130,7 +129,10 @@ class Drop extends React.Component {
 
 Drop.propTypes = {
 	drop: PropTypes.object,
-	children: PropTypes.object,
+	children: PropTypes.oneOfType([
+		PropTypes.arrayOf(PropTypes.node),
+		PropTypes.node
+	]),
 	onClose: PropTypes.func,
 	setInstance: PropTypes.func,
 };

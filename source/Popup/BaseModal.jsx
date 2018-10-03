@@ -39,7 +39,10 @@ const BaseModal = ({shouldCloseOnOverlayClick = true, children, isOpen, appEleme
 
 BaseModal.propTypes = {
 	isOpen: PropTypes.bool.isRequired,
-	children: PropTypes.object,
+	children: PropTypes.oneOfType([
+		PropTypes.arrayOf(PropTypes.node),
+		PropTypes.node
+	]),
 	appElement: PropTypes.object,
 	onAfterOpen: PropTypes.func,
 	onRequestClose: PropTypes.func,
