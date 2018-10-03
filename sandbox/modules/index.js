@@ -5,14 +5,18 @@ import * as Button from './button';
 import * as Date from './date';
 import * as Loader from './loader';
 import * as Select from './select';
+import * as Drop from './drop';
+import * as Popups from './popups';
 
 
 export default [
 	Dashboard,
-    Input,
-    Format,
-    Button,
-    Date,
-    Loader,
-    Select
+	Input,
+	Format,
+	Button,
+	Date,
+	Loader,
+	Select,
+	Drop,
+	Popups,
 ];
