@@ -2,7 +2,7 @@
 
 exports[`Button Default props 1`] = `
 <button
-  className=" "
+  className="button "
   disabled={false}
   type="button"
 >
@@ -12,7 +12,7 @@ exports[`Button Default props 1`] = `
 
 exports[`Button Disabled 1`] = `
 <button
-  className=" "
+  className="button "
   disabled={true}
   type="button"
 >
@@ -32,7 +32,7 @@ exports[`Button Loading && className 1`] = `
 
 exports[`Button Loading 1`] = `
 <button
-  className=" loader"
+  className="button loader"
   disabled={true}
   type="button"
 >
@@ -42,7 +42,7 @@ exports[`Button Loading 1`] = `
 
 exports[`Button Type 1`] = `
 <button
-  className=" "
+  className="button "
   disabled={false}
   type="button"
 >
@@ -52,7 +52,7 @@ exports[`Button Type 1`] = `
 
 exports[`Button Type 2`] = `
 <button
-  className=" "
+  className="button "
   disabled={false}
   type="reset"
 >
@@ -62,7 +62,7 @@ exports[`Button Type 2`] = `
 
 exports[`Button Type 3`] = `
 <button
-  className=" "
+  className="button "
   disabled={false}
   type="submit"
 >

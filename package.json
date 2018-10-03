@@ -9,7 +9,8 @@
     "pub": "gulp",
     "start": "webpack-dev-server",
     "build": "rm -rf dist && webpack",
-    "test": "jest"
+    "test": "jest",
+    "test-u": "jest -u"
   },
   "dependencies": {
     "accounting": "^0.4.1",
