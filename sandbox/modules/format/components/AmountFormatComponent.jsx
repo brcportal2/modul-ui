@@ -7,7 +7,7 @@ export default class AmountFormatComponent extends Component {
     render() {
         return (
             <div>
-                <flex className="row">
+                <div className="row">
                     <div className='col-4'>
                         <AmountFormat
                             value='123456'
@@ -20,9 +20,9 @@ export default class AmountFormatComponent extends Component {
 />`}
                             </pre>
                     </div>
-                </flex>
+                </div>
 
-                <flex className="row">
+                <div className="row">
                     <div className='col-4'>
                         <AmountFormat
                             def='not date'
@@ -37,9 +37,9 @@ export default class AmountFormatComponent extends Component {
 />`}
                             </pre>
                     </div>
-                </flex>
+                </div>
 
-                <flex className="row">
+                <div className="row">
                     <div className='col-4'>
                         <AmountFormat
                             className='test_class'
@@ -56,9 +56,9 @@ export default class AmountFormatComponent extends Component {
 />`}
                             </pre>
                     </div>
-                </flex>
+                </div>
 
-                <flex className="row">
+                <div className="row">
                     <div className='col-4'>
                         <AmountFormat
                             className='test_class'
@@ -77,7 +77,7 @@ export default class AmountFormatComponent extends Component {
 />`}
                             </pre>
                     </div>
-                </flex>
+                </div>
             </div>
         );
     }

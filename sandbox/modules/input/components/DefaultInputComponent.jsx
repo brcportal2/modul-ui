@@ -6,7 +6,7 @@ export default class DefaultInputComponent extends Component {
     render() {
         return (
             <div>
-                <flex className="row">
+                <div className="row">
                     <div className='col-4'>
                         <Input className='w100' />
                     </div>
@@ -17,9 +17,9 @@ export default class DefaultInputComponent extends Component {
 />`}
                             </pre>
                     </div>
-                </flex>
+                </div>
 
-                <flex className="row">
+                <div className="row">
                     <div className='col-4'>
                         <Input type='password' className='w100' placeholder='Введите пароль' />
                     </div>
@@ -32,7 +32,7 @@ export default class DefaultInputComponent extends Component {
 />`}
                                 </pre>
                     </div>
-                </flex>
+                </div>
             </div>
         );
     }

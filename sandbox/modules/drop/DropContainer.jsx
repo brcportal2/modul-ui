@@ -6,32 +6,29 @@ import Drop from "Drop";
 export default class DropContainer extends Component {
 	render() {
 		return (
-			<ExampleComponent name='Drop'>
-				<flex className="row">
-					<div className='col-4'>
-						<Drop>
-							<a className="drop-target">target</a>
-							<div className="drop-content">
-								<div className="drop-content-inner">
-									content
+			<div>
+				<ExampleComponent name='Drop'>
+					<div className="row">
+						<div className='col-4'>
+
+							<Drop drop={{position: 'bottom left'}}>
+								<a className="drop-target button small icon-plus">target</a>
+								<div className="drop-content">
+									<div className="drop-content-inner">
+										<ul className="drop-menu">
+											<li><a>target 1</a></li>
+											<li><a>target 2</a></li>
+											<li><a>target 3</a></li>
+											<li><a>target 4</a></li>
+										</ul>
+									</div>
 								</div>
-							</div>
-						</Drop>
+							</Drop>
+
+						</div>
 					</div>
-					<div className='col-8'>
-						<pre className='light_block small'>
-							{`<Drop>
-							<a className="drop-target">123</a>
-							<div className="drop-content">
-								<div className="drop-content-inner">
-									4321
-								</div>
-							</div>
-						</Drop>`}
-						</pre>
-					</div>
-				</flex>
-			</ExampleComponent>
+				</ExampleComponent>
+			</div>
 		);
 	}
 }

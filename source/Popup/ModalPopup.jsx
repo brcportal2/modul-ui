@@ -37,16 +37,24 @@ class ModalPopup extends React.Component {
 
 	render() {
 		const {
-			children, appElement = document.getElementsByTagName('body')[0],
-			onAfterOpen, shouldCloseOnOverlayClick, onRequestClose
-		}=this.props;
+			children,
+			appElement = document.getElementsByTagName('body')[0],
+			onAfterOpen,
+			shouldCloseOnOverlayClick,
+			onRequestClose
+		} = this.props;
+
 		const {isOpen} = this.state || {};
-		return (<BaseModal isOpen={isOpen}
-			appElement={appElement}
-			onAfterOpen={onAfterOpen}
-			shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
-			onRequestClose={onRequestClose}>
-			{children}</BaseModal>);
+
+		return (
+			<BaseModal
+				isOpen={isOpen}
+				appElement={appElement}
+				onAfterOpen={onAfterOpen}
+				shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
+				onRequestClose={onRequestClose}
+			>{children}</BaseModal>
+		);
 	}
 }
 
