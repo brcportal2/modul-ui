@@ -1,6 +1,15 @@
 # ModulBank UI React Components
 
-## Установка и запуск:
+## Импорт компонентов:
+
+```sh
+import {Button, Input} from 'modul-ui';
+// или
+import Button from 'modul-ui/Button';
+import Input from 'modul-ui/Input';
+```
+
+## Установка и запуск песочныцы:
 
 ```
 mkdir modul.components

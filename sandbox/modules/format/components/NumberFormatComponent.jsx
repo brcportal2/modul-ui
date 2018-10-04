@@ -7,7 +7,7 @@ export default class NumberFormatComponent extends Component {
     render() {
         return (
             <div>
-                <flex className="row">
+                <div className="row">
                     <div className='col-4'>
                         <NumberFormat
                             value='123456'
@@ -20,9 +20,9 @@ export default class NumberFormatComponent extends Component {
 />`}
                             </pre>
                     </div>
-                </flex>
+                </div>
 
-                <flex className="row">
+                <div className="row">
                     <div className='col-4'>
                         <NumberFormat
                             def='not date'
@@ -37,9 +37,9 @@ export default class NumberFormatComponent extends Component {
 />`}
                             </pre>
                     </div>
-                </flex>
+                </div>
 
-                <flex className="row">
+                <div className="row">
                     <div className='col-4'>
                         <NumberFormat
                             className='test_class'
@@ -56,9 +56,9 @@ export default class NumberFormatComponent extends Component {
 />`}
                             </pre>
                     </div>
-                </flex>
+                </div>
 
-                <flex className="row">
+                <div className="row">
                     <div className='col-4'>
                         <NumberFormat
                             className='test_class'
@@ -73,7 +73,7 @@ export default class NumberFormatComponent extends Component {
 />`}
                             </pre>
                     </div>
-                </flex>
+                </div>
             </div>
         );
     }

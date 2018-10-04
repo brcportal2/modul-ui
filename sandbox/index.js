@@ -1,4 +1,4 @@
-//import '../../../ModulKassa/Markup.Kassa/markup/stylus/style_kassa.styl';
+import '../../Markup.Kassa/markup/stylus/style_kassa.styl';
 
 import React from 'react';
 import ReactDOM from 'react-dom';

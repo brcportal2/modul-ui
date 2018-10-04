@@ -7,7 +7,7 @@ export default class DateFormatComponent extends Component {
     render() {
         return (
             <div>
-                <flex className="row">
+                <div className="row">
                     <div className='col-4'>
                         <DateFormat
                             value='12.02.2012'
@@ -20,8 +20,8 @@ export default class DateFormatComponent extends Component {
 />`}
                             </pre>
                     </div>
-                </flex>
-                <flex className="row">
+                </div>
+                <div className="row">
                     <div className='col-4'>
                         <DateFormat
                             className='button small'
@@ -40,7 +40,7 @@ export default class DateFormatComponent extends Component {
 />`}
                             </pre>
                     </div>
-                </flex>
+                </div>
             </div>
         );
     }

@@ -5,7 +5,7 @@ import ConfirmPopup from './ConfirmPopup';
 
 export default ContentPopup;
 export {
-    ModalPopup,
-    ContentPopup,
-    ConfirmPopup
+	ModalPopup,
+	ContentPopup,
+	ConfirmPopup
 };

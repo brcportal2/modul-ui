@@ -19,7 +19,7 @@
     "jquery-datetimepicker": "^2.5.20",
     "modul-helpers": "^0.1.106",
     "react-modal": "^3.5.1",
-    "react-select": "^2.0.0",
+    "react-select": "^1.2.1",
     "tether-drop": "^1.4.2"
   },
   "peerDependencies": {

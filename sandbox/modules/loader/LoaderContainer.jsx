@@ -8,7 +8,7 @@ export default class LoaderContainer extends Component {
     render() {
         return (
             <ExampleComponent name='Loader'>
-                <flex className="row">
+                <div className="row">
                     <div className='col-4'>
                         <Loader loading />
                     </div>
@@ -17,8 +17,8 @@ export default class LoaderContainer extends Component {
                             {`<Loader loading />`}
                         </pre>
                     </div>
-                </flex>
-                <flex className="row">
+                </div>
+                <div className="row">
                     <div className='col-4'>
                         <Loader loading>
                             <div className='p32'>
@@ -35,7 +35,7 @@ export default class LoaderContainer extends Component {
 </Loader>`}
                         </pre>
                     </div>
-                </flex>
+                </div>
             </ExampleComponent>
         );
     }

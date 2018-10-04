@@ -9,7 +9,7 @@ export default class MaskInputComponent extends Component {
                 <div className='info_success icon-info'>
                     Для масок ввода используется бибилиотека <a target='_blank' href='https://unmanner.github.io/imaskjs/'>IMask.js</a>. Для применение строкой маски используете свойство <b>mask</b>, для остальных параметров маски можно использовать <b>maskProps</b> и передавать свойства ввиде объекта.
                 </div>
-                <flex className='row'>
+                <div className='row'>
                     <div className='col-4'>
                         <Input
                             className='w100'
@@ -42,8 +42,8 @@ export default class MaskInputComponent extends Component {
 />`}
                         </pre>
                     </div>
-                </flex>
-                <flex className='row'>
+                </div>
+                <div className='row'>
                     <div className='col-4'>
                         <Input
                             className='w100'
@@ -59,8 +59,8 @@ export default class MaskInputComponent extends Component {
 />`}
                         </pre>
                     </div>
-                </flex>
-                <flex className='row'>
+                </div>
+                <div className='row'>
                     <div className='col-4'>
                         <Input
                             className='w100'
@@ -77,8 +77,8 @@ export default class MaskInputComponent extends Component {
 />`}
                         </pre>
                     </div>
-                </flex>
-                <flex className='row'>
+                </div>
+                <div className='row'>
                     <div className='col-4'>
                         <Input
                             className='w100'
@@ -95,8 +95,8 @@ export default class MaskInputComponent extends Component {
 />`}
                         </pre>
                     </div>
-                </flex>
-                <flex className='row'>
+                </div>
+                <div className='row'>
                     <div className='col-4'>
                         <Input
                             className='w100'
@@ -113,8 +113,8 @@ export default class MaskInputComponent extends Component {
 />`}
                         </pre>
                     </div>
-                </flex>
-                <flex className='row'>
+                </div>
+                <div className='row'>
                     <div className='col-4'>
                         <Input
                             className='w100'
@@ -131,7 +131,7 @@ export default class MaskInputComponent extends Component {
 />`}
                         </pre>
                     </div>
-                </flex>
+                </div>
             </div>
         );
     }

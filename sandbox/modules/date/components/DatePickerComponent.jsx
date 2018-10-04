@@ -7,7 +7,7 @@ export default class DatePickerComponent extends Component {
     render() {
         return (
             <div>
-                <flex className="row">
+                <div className="row">
                     <div className='col-4'>
                         <DatePicker />
                     </div>
@@ -16,7 +16,7 @@ export default class DatePickerComponent extends Component {
                             {`<DatePicker />`}
                         </pre>
                     </div>
-                </flex>
+                </div>
             </div>
         );
     }
