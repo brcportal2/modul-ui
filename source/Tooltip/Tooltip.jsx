@@ -5,8 +5,8 @@ import TooltipCreator from '../../node_modules/tooltip.js/dist/tooltip';
 class Tooltip extends React.Component {
 	static defaultProps = {
 		placement: 'top',
-		arrowSelector: '.tooltip-arrow',
-		innerSelector: '.tooltip-inner',
+		arrowSelector: '.tooltip-2-arrow',
+		innerSelector: '.tooltip-2-inner',
 		container: false,
 		delay: 0,
 		html: false,
@@ -17,6 +17,7 @@ class Tooltip extends React.Component {
 		offset: 0,
 		popperOptions: {},
 		passRef: false,
+		template: '<div class="tooltip-2" role="tooltip"><div class="tooltip-2-arrow"></div><div class="tooltip-2-inner"></div></div>'
 	};
 
 	elementRef;
