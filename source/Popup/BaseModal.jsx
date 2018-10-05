@@ -20,6 +20,12 @@ const BaseModal = ({shouldCloseOnOverlayClick = true, children, isOpen, appEleme
 		}
 	};
 
+	// из-за portalCreate у нас события клика всплывают с модального окна в компонент где он был замуонтин
+	const preventEvents = e => {
+		e.preventDefault();
+		e.stopPropagation();
+	};
+
 	return (<Modal isOpen={isOpen}
 		portalClassName="poss"
 		contentLabel=""
@@ -29,7 +35,7 @@ const BaseModal = ({shouldCloseOnOverlayClick = true, children, isOpen, appEleme
 		onAfterOpen={onAfterOpen}
 		className="popup_table"
 		overlayClassName="popup_overlay">
-		<div className="popup_cell">
+		<div className="popup_cell" onClick={preventEvents}>
 			{children}
 			<div className="popup_backdrop" onClick={handleOverlayOnClick} />
 		</div>
