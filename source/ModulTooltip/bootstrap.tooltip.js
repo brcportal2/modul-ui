@@ -326,7 +326,7 @@ if (typeof jQuery === 'undefined') {
 			var actualWidth  = $tip[0].offsetWidth
 			var actualHeight = $tip[0].offsetHeight
 
-			var calculatedOffset = this.getCalculatedOffset(placement, pos, actualWidth, actualHeight)
+			var calculatedOffset = this.getCalculatedOffset(placement, pos, actualWidth, actualHeight, this.options.offset)
 
 			this.applyPlacement(calculatedOffset, placement)
 
