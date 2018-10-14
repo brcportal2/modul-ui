@@ -7,6 +7,7 @@ import * as Loader from './loader';
 import * as Select from './select';
 import * as Drop from './drop';
 import * as Popups from './popups';
+import * as ModulTooltip from './modulTooltip';
 
 
 export default [
@@ -19,4 +20,5 @@ export default [
 	Select,
 	Drop,
 	Popups,
+	ModulTooltip,
 ];

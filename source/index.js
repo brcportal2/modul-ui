@@ -9,6 +9,7 @@ import Loader from './Loader';
 import NumberFormat from './NumberFormat';
 import Popup from './Popup';
 import Select from './Select';
+import ModulTooltip from './ModulTooltip';
 
 
 
@@ -23,5 +24,6 @@ export {
 	Loader,
 	NumberFormat,
 	Popup,
-	Select
+	Select,
+	ModulTooltip
 };
