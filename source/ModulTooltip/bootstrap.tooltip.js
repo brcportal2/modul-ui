@@ -68,6 +68,10 @@ if (typeof jQuery === 'undefined') {
 		preventHideOnFocus: false,
 		innerPrefix: '.tooltip-inner',
 		arrowPrefix: '.tooltip-arrow',
+		offset: {
+			top: 0,
+			left: 0,
+		}
 	}
 
 	Tooltip.prototype.init = function (type, element, options) {
