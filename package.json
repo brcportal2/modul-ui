@@ -11,7 +11,8 @@
     "start": "webpack-dev-server",
     "build": "babel ./source --out-dir ./lib",
     "test": "jest",
-    "test-u": "jest -u"
+    "test-u": "jest -u",
+    "storybook": "start-storybook -p 9001"
   },
   "dependencies": {
     "accounting": "^0.4.1",
@@ -27,6 +28,9 @@
     "react-dom": ">=16.0"
   },
   "devDependencies": {
+    "@storybook/addon-knobs": "4.0.0-alpha.25",
+    "@storybook/addon-options": "4.0.0-alpha.25",
+    "@storybook/react": "4.0.0-alpha.25",
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^9.0.0",
