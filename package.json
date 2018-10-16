@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "accounting": "^0.4.1",
+    "classnames": "^2.2.6",
     "imask": "^4.0.0",
     "jquery-datetimepicker": "^2.5.20",
     "modul-helpers": "^0.1.106",
@@ -28,6 +29,7 @@
     "react-dom": ">=16.0"
   },
   "devDependencies": {
+    "@storybook/addon-info": "4.0.0-alpha.25",
     "@storybook/addon-knobs": "4.0.0-alpha.25",
     "@storybook/addon-options": "4.0.0-alpha.25",
     "@storybook/react": "4.0.0-alpha.25",
