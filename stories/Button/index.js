@@ -13,7 +13,7 @@ export default storiesOf('Button', module)
 				'mdStyle',
 
 				[
-					'',
+					undefined,
 					'second',
 					'cancel',
 					'dark',
@@ -26,14 +26,14 @@ export default storiesOf('Button', module)
 					'_gd-orange',
 				],
 
-				''
+				undefined
 			)}
 
 			mdSize={select(
 				'mdSize',
 
 				[
-					'',
+					undefined,
 					'xxsmall',
 					'xsmall',
 					'small',
@@ -42,10 +42,10 @@ export default storiesOf('Button', module)
 					'wide',
 				],
 
-				''
+				undefined
 			)}
 
-			icon={text('icon', '')}
+			icon={text('icon', undefined)}
 		>
 			Hello Button
 		</Button>
