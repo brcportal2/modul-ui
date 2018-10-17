@@ -126,7 +126,6 @@ class Drop extends React.Component {
 	}
 }
 
-
 Drop.propTypes = {
 	drop: PropTypes.object,
 	children: PropTypes.oneOfType([
