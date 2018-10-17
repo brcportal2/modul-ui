@@ -5,6 +5,7 @@ import DatePicker from './DatePicker';
 import Drop from './Drop';
 import Loader from './Loader';
 import ModulTooltip from './ModulTooltip';
+import Popup from './Popup';
 
 export default () => {
 	Button();
@@ -13,4 +14,5 @@ export default () => {
 	Drop();
 	Loader();
 	ModulTooltip();
+	Popup();
 };
