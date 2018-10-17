@@ -129,6 +129,11 @@ module.exports = (storybookBaseConfig, configType) => {
 		}
 	}));
 
+	storybookBaseConfig.plugins.push(new webpack.ProvidePlugin({
+		$: 'jquery',
+		jQuery: 'jquery'
+	}));
+
 	storybookBaseConfig.resolve.modules = [
 		path.join(__dirname, '..', 'source'),
 		path.join(__dirname, '..', 'node_modules')
