@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import {dateHelper} from 'modul-helpers';
 
 export default class DateFormat extends Component {
+	static displayName = 'DateFormat';
+
 	static propTypes = {
 		value: PropTypes.oneOfType([
 			PropTypes.string,

@@ -6,6 +6,8 @@ import q from 'q';
  * Попап с контентом
  */
 class ContentPopup extends React.Component {
+	static displayName = 'ContentPopup';
+
 	static defaultProps = {
 		closeName: null,
 		shouldCloseOnOverlayClick: false,

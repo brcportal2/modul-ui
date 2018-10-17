@@ -6,6 +6,8 @@ import q from 'q';
  * Попап для подтверждения операции
  */
 class ConfirmPopup extends React.Component {
+	static displayName = 'ConfirmPopup';
+
 	open({title, text}={}) {
 		this.setState({
 			title, text

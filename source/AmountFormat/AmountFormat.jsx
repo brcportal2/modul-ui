@@ -16,6 +16,8 @@ const CurrencySymbol = ({value}) => {
 };
 
 export default class AmountFormat extends Component {
+	static displayName = 'AmountFormat';
+
 	static propTypes = {
 		value: PropTypes.oneOfType([
 			PropTypes.string,

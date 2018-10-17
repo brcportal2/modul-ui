@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function StoryLayout(props) {
+function StoryLayout(props) {
 	return <div style={{
 		'display': 'flex',
 		'padding': '30px',
@@ -12,3 +12,6 @@ export default function StoryLayout(props) {
 		</div>
 	</div>;
 }
+
+StoryLayout.displayName = 'StoryLayout';
+export default StoryLayout;

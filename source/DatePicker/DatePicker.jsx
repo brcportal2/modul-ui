@@ -37,6 +37,8 @@ const datePickerOptions = [
 ];
 
 export default class DatePicker extends Component {
+	static displayName = 'DatePicker';
+
 	static propTypes = {
 		autoComplete: PropTypes.string,
 		name: PropTypes.string,

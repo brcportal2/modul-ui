@@ -14,6 +14,8 @@ accounting.settings = {
 };
 
 export default class NumberFormat extends Component {
+	static displayName = 'NumberFormat';
+
 	static propTypes = {
 		value: PropTypes.oneOfType([
 			PropTypes.string,

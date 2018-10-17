@@ -6,6 +6,8 @@ import TetherDrop from 'tether-drop';
 
 
 class Drop extends React.Component {
+	static displayName = 'Drop';
+
 	constructor() {
 		super();
 		this.container = document.createElement('div');

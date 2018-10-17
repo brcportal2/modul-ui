@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 export default class Button extends Component {
+	static displayName = 'Button'
+
 	static propTypes = {
 		loading: PropTypes.bool,
 		disabled: PropTypes.bool,

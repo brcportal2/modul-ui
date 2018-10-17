@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import TooltipModel from './TooltipModel';
 
 class ModulTooltip extends React.Component {
+	static displayName = 'ModulTooltip';
+
 	static propTypes = {
 		className: PropTypes.string,
 		preventHideOnFocus: PropTypes.bool,

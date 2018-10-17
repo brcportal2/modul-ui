@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 export default class Loader extends Component {
+	static displayName = 'Loader';
+
 	static propTypes = {
 		children: PropTypes.element,
 		loading: PropTypes.bool,
