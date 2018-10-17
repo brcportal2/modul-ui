@@ -71,50 +71,6 @@ const rules = [
 	}
 ];
 
-// module.exports = {
-// 	module: {
-// 		rules:
-// 	},
-
-// 	plugins: [
-// 		new webpack.LoaderOptionsPlugin({
-// 			options: {
-// 				stylus: {
-// 					'resolve url': true,
-// 					use: [nib()],
-// 					import: ['~nib/lib/nib/index.styl'],
-// 					preferPathResolver: 'webpack',
-// 				}
-// 			}
-// 		}),
-
-// 		new webpack.ProvidePlugin({
-// 			$: 'jquery',
-// 			jQuery: 'jquery'
-// 		}),
-// 	],
-
-// 	resolve: {
-// 		extensions: [
-// 			'.webpack-loader.js',
-// 			'.web-loader.js',
-// 			'.loader.js',
-// 			'.js',
-// 			'.jsx',
-// 			'.svg',
-// 			'.ttf',
-// 			'.woff',
-// 			'.woff2'
-// 		],
-
-// 		modules: [
-// 			path.join(__dirname, 'source'),
-// 			path.join(__dirname, 'node_modules')
-// 		]
-// 	},
-// };
-
-
 module.exports = (storybookBaseConfig, configType) => {
 	rules.map(I => storybookBaseConfig.module.rules.push(I));
 
