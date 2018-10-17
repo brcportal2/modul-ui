@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TooltipModel from './TooltipModel';
-import 'ModulTooltip/bootstrap.tooltip';
 
 class ModulTooltip extends React.Component {
 	static propTypes = {
