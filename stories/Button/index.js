@@ -2,51 +2,54 @@ import React from 'react';
 import {storiesOf} from '@storybook/react';
 import {Button} from '../../source/Button';
 import {boolean, select, text} from '@storybook/addon-knobs';
+import StoryLayout from '../StoryLayout';
 
 export default storiesOf('Button', module)
 	.add('default', () =>
-		<Button
-			loading={boolean('loading', false)}
-			disabled={boolean('disabled', false)}
+		<StoryLayout>
+			<Button
+				loading={boolean('loading', false)}
+				disabled={boolean('disabled', false)}
 
-			mdStyle={select(
-				'mdStyle',
+				mdStyle={select(
+					'mdStyle',
 
-				[
-					undefined,
-					'second',
-					'cancel',
-					'dark',
-					'white',
-					'clean',
-					'grey',
-					'light',
-					'light_primary',
-					'light-white',
-					'_gd-orange',
-				],
+					[
+						undefined,
+						'second',
+						'cancel',
+						'dark',
+						'white',
+						'clean',
+						'grey',
+						'light',
+						'light_primary',
+						'light-white',
+						'_gd-orange',
+					],
 
-				undefined
-			)}
+					undefined
+				)}
 
-			mdSize={select(
-				'mdSize',
+				mdSize={select(
+					'mdSize',
 
-				[
-					undefined,
-					'xxsmall',
-					'xsmall',
-					'small',
-					'middle',
-					'full',
-					'wide',
-				],
+					[
+						undefined,
+						'xxsmall',
+						'xsmall',
+						'small',
+						'middle',
+						'full',
+						'wide',
+					],
 
-				undefined
-			)}
+					undefined
+				)}
 
-			icon={text('icon', undefined)}
-		>
-			Hello Button
-		</Button>
+				icon={text('icon', undefined)}
+			>
+				Hello Button
+			</Button>
+		</StoryLayout>
 	);
