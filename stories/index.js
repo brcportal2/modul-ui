@@ -4,6 +4,7 @@ import Format from './Format';
 import DatePicker from './DatePicker';
 import Drop from './Drop';
 import Loader from './Loader';
+import ModulTooltip from './ModulTooltip';
 
 export default () => {
 	Button();
@@ -11,4 +12,5 @@ export default () => {
 	DatePicker();
 	Drop();
 	Loader();
+	ModulTooltip();
 };
