@@ -5,7 +5,7 @@ exports[`AmountFormat Big value 1`] = `
   className="test_class"
 >
   1 234 567 890.00
-   
+     
   <span
     className="cur ruble"
   >
@@ -21,7 +21,7 @@ exports[`AmountFormat ClassName 1`] = `
   className="test_class"
 >
   123 456.00
-   
+     
   <span
     className="cur ruble"
   >
@@ -37,7 +37,7 @@ exports[`AmountFormat Currency EUR 1`] = `
   className="test_class"
 >
   1 234 567 890.00
-   
+     
   <span
     className="cur euro"
   >
@@ -53,7 +53,7 @@ exports[`AmountFormat Currency RUR 1`] = `
   className="test_class"
 >
   1 234 567 890.00
-   
+     
   <span
     className="cur ruble"
   >
@@ -69,7 +69,7 @@ exports[`AmountFormat Currency USD 1`] = `
   className="test_class"
 >
   1 234 567 890.00
-   
+     
   <span
     className="cur dollar"
   >
@@ -85,7 +85,7 @@ exports[`AmountFormat Default props 1`] = `
   className=""
 >
   123 456.00
-   
+     
   <span
     className="cur ruble"
   >
@@ -101,7 +101,7 @@ exports[`AmountFormat Default value 1`] = `
   className=""
 >
   123 456.00
-   
+     
   <span
     className="cur ruble"
   >
@@ -117,7 +117,7 @@ exports[`AmountFormat First zero 1`] = `
   className="test_class"
 >
   123.00
-   
+     
   <span
     className="cur ruble"
   >
