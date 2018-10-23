@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import ExampleComponent from '../../components/ExampleComponent';
 
 import ModulTooltip from 'ModulTooltip';
-import 'ModulTooltip/bootstrap.tooltip';
 
 export default class ModulTooltipContainer extends Component {
 	render() {
