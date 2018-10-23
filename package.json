@@ -25,7 +25,7 @@
     "react-modal": "^3.5.1",
     "react-select": "^1.2.1",
     "tether-drop": "^1.4.2",
-    "modul-bootstrap.tooltip": "git://git@github.com/brcportal2/modul-bootstrap.tooltip"
+    "modul-bootstrap.tooltip": "git://github.com/brcportal2/modul-bootstrap.tooltip#0.0.2"
   },
   "peerDependencies": {
     "react": ">=16.",
