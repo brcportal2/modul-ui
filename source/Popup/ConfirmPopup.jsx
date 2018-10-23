@@ -69,13 +69,11 @@ class ConfirmPopup extends React.Component {
 				ref={dialog => this.dialog = dialog}>
 				<div className={classNames}>
 					{!disableClose && <a className="popup_close icon-close" onClick={::this.handleCloseClick} />}
-					<div>
-						{title && <h1>{title}</h1>}
-						{text && <p>{text}</p>}
-						<div className="popup_panel">
-							<button className="button" onClick={::this.handleOkClick}>{okName}</button>
-							{cancelName && <a className="button_clean" onClick={::this.handleCancelClick}>{cancelName}</a>}
-						</div>
+					{title && <h1>{title}</h1>}
+					{text && <p>{text}</p>}
+					<div className="popup_panel">
+						<button className="button" onClick={::this.handleOkClick}>{okName}</button>
+						{cancelName && <a className="button_clean" onClick={::this.handleCancelClick}>{cancelName}</a>}
 					</div>
 				</div>
 			</ModalPopup>);
