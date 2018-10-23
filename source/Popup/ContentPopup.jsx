@@ -45,18 +45,15 @@ class ContentPopup extends React.Component {
 
 		const classNames = ['popup_layer popup_action_default', className].join(' ');
 		return (
-			<ModalPopup onAfterOpen={onAfterOpen}
-				shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
+			<ModalPopup onAfterOpen={onAfterOpen} shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
 				onRequestClose={::this.handleCloseClick}
 				ref={dialog => this.dialog = dialog}>
 				<div className={classNames}>
 					{!disableClose && <a className="popup_close icon-close" onClick={::this.handleCloseClick} />}
-					<div>
-						{children}
-						{closeName && <div className="popup_panel center_xy">
-							<button className="button small light" onClick={::this.handleCloseClick}>{closeName}</button>
-						</div>}
-					</div>
+					{children}
+					{closeName && <div className="popup_panel center_xy">
+						<button className="button small light" onClick={::this.handleCloseClick}>{closeName}</button>
+					</div>}
 				</div>
 			</ModalPopup>);
 	}

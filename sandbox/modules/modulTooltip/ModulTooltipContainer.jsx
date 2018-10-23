@@ -8,10 +8,6 @@ export default class ModulTooltipContainer extends Component {
 		return (
 			<ExampleComponent name='ModulTooltip'>
 				<div className="row">
-					<div className='info icon-info'>
-						<div>Для работы в проект необходимо импортировать файл:</div>
-						<b>{`import 'modul-ui/ModulTooltip/bootstrap.tooltip';`}</b>
-					</div>
 					<div className='col-4'>
 						<span data-mtip="tooltip-ref" className="icon-info  vam">
 							Tooltip
