@@ -22,7 +22,7 @@ const BaseModal = ({shouldCloseOnOverlayClick = true, children, isOpen, appEleme
 
 	// из-за portalCreate у нас события клика всплывают с модального окна в компонент где он был замуонтин
 	const preventEvents = e => {
-		e.preventDefault();
+		// e.preventDefault();
 		e.stopPropagation();
 	};
 
