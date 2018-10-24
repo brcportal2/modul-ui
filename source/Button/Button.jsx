@@ -10,6 +10,7 @@ export default class Button extends Component {
 		disabled: PropTypes.bool,
 		className: PropTypes.string,
 		icon: PropTypes.string,
+		innerRef: PropTypes.any,
 
 		mdStyle: PropTypes.oneOf([
 			'second',
@@ -55,6 +56,7 @@ export default class Button extends Component {
 			mdStyle,
 			mdSize,
 			icon,
+			innerRef,
 			...props
 		} = this.props;
 
@@ -67,6 +69,8 @@ export default class Button extends Component {
 					loader: loading,
 					[`icon-${icon}`]: Boolean(icon)
 				})}
+
+				ref={innerRef}
 			>{children}</button>
 		);
 	}

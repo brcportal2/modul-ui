@@ -1,13 +1,14 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
 import {Drop} from '../../source/Drop';
+import {ButtonWithRef} from '../../source/Button';
 import StoryLayout from '../StoryLayout';
 
 export default storiesOf('Drop', module)
 	.add('default', () =>
 		<StoryLayout>
 			<Drop drop={{position: 'bottom left'}}>
-				<a className="button drop-target">button</a>
+				<ButtonWithRef className="drop-target">button</ButtonWithRef>
 
 				<div className="drop-content">
 					<div className="drop-content-inner">
