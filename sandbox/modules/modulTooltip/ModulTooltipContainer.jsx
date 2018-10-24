@@ -2,17 +2,12 @@ import React, {Component} from 'react';
 import ExampleComponent from '../../components/ExampleComponent';
 
 import ModulTooltip from 'ModulTooltip';
-import 'ModulTooltip/bootstrap.tooltip';
 
 export default class ModulTooltipContainer extends Component {
 	render() {
 		return (
 			<ExampleComponent name='ModulTooltip'>
 				<div className="row">
-					<div className='info icon-info'>
-						<div>Для работы в проект необходимо импортировать файл:</div>
-						<b>{`import 'modul-ui/ModulTooltip/bootstrap.tooltip';`}</b>
-					</div>
 					<div className='col-4'>
 						<span data-mtip="tooltip-ref" className="icon-info  vam">
 							Tooltip
