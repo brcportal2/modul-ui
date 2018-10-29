@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {validateHelper} from "modul-helpers";
-import 'jquery-datetimepicker/build/jquery.datetimepicker.full.min';
+import 'modul-jquery-datetimepicker';
 
 const datePickerOptions = [
 	'value',
