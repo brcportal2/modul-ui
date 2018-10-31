@@ -2,7 +2,6 @@ import React from 'react';
 import {storiesOf} from '@storybook/react';
 import {ModulTooltip} from '../../source/ModulTooltip';
 import StoryLayout from '../StoryLayout';
-import 'ModulTooltip/bootstrap.tooltip';
 
 export default storiesOf('ModulTooltip', module)
 	.add('default', () =>

@@ -6,3 +6,5 @@ dist
 yarn.lock
 lib
 .out-storybook
+.cache
+.DS_Store
