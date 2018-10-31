@@ -5,8 +5,10 @@ import {ButtonWithRef} from '../../source/Button';
 import StoryLayout from '../StoryLayout';
 
 export default storiesOf('Drop', module)
-	.add('default', () =>
-		<StoryLayout>
+	.add(
+		'default',
+
+		() => <StoryLayout>
 			<Drop drop={{position: 'bottom left'}}>
 				<ButtonWithRef className="drop-target">button</ButtonWithRef>
 
@@ -21,5 +23,7 @@ export default storiesOf('Drop', module)
 					</div>
 				</div>
 			</Drop>
-		</StoryLayout>
+		</StoryLayout>,
+
+		{info: {propTablesExclude: [ButtonWithRef, StoryLayout]}}
 	);
