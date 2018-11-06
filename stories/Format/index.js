@@ -14,45 +14,66 @@ function myDateKnob(name, defaultValue) {
 }
 
 export default storiesOf('Format', module)
-	.add('AmountFormat', () =>
-		<StoryLayout>
-			<AmountFormat
-				value={text('value', '123456')}
+	.add(
+		'AmountFormat',
 
-				currency={select(
-					'currency',
+		() =>
+			<StoryLayout>
+				<AmountFormat
+					value={text('value', '123456')}
 
-					[
-						undefined,
-						'RUR',
-						'USD',
-						'EUR'
-					],
+					currency={select(
+						'currency',
 
-					undefined
-				)}
+						[
+							undefined,
+							'RUR',
+							'USD',
+							'EUR'
+						],
 
-				precision={number('precision', 2)}
-				def={text('def', 'empty message')}
-			/>
-		</StoryLayout>
+						undefined
+					)}
+
+					precision={number('precision', 2)}
+					def={text('def', 'empty message')}
+				/>
+			</StoryLayout>,
+
+		{info: {text: `
+		import {AmountFormat} from 'modul-ui';
+		`}}
 	)
 
-	.add('NumberFormat', () =>
-		<StoryLayout>
-			<NumberFormat
-				value={text('value', '123456')}
-				def={text('def', 'empty message')}
-			/>
-		</StoryLayout>
+	.add(
+		'NumberFormat',
+
+		() =>
+			<StoryLayout>
+				<NumberFormat
+					value={text('value', '123456')}
+					def={text('def', 'empty message')}
+				/>
+			</StoryLayout>,
+
+		{info: {text: `
+		import {NumberFormat} from 'modul-ui';
+		`}}
 	)
 
-	.add('DateFormat', () =>
-		<StoryLayout>
-			<DateFormat
-				value={myDateKnob('value', defaultDateValue)}
-				format={text('format', '')}
-				def={text('def', 'empty message')}
-			/>
-		</StoryLayout>
+	.add(
+		'DateFormat',
+
+		() =>
+			<StoryLayout>
+				<DateFormat
+					value={myDateKnob('value', defaultDateValue)}
+					format={text('format', '')}
+					def={text('def', 'empty message')}
+				/>
+			</StoryLayout>,
+
+		{info: {text: `
+		import {DateFormat} from 'modul-ui';
+		`}}
 	);

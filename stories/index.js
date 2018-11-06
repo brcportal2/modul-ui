@@ -1,4 +1,4 @@
-import '../../Markup.Common/ui-kit/stylus/style_ui_correct.styl';
+import '../../Markup.Kassa/markup/stylus/style_kassa.styl';
 import Button from './Button';
 import Format from './Format';
 import DatePicker from './DatePicker';
@@ -6,6 +6,8 @@ import Drop from './Drop';
 import Loader from './Loader';
 import ModulTooltip from './ModulTooltip';
 import Popup from './Popup';
+import Form from './Form';
+import Table from './Table';
 
 export default () => {
 	Button();
@@ -15,4 +17,6 @@ export default () => {
 	Loader();
 	ModulTooltip();
 	Popup();
+	Form();
+	Table();
 };
