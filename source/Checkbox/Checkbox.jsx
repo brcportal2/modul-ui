@@ -50,4 +50,6 @@ Checkbox.defaultProps = {
 	value: 'on'
 };
 
+Checkbox.displayName = 'Checkbox';
+
 export default Checkbox;
