@@ -6,52 +6,68 @@ import {boolean, text} from '@storybook/addon-knobs';
 import StoryLayout from '../StoryLayout';
 
 export default storiesOf('Popup', module)
-	.add('ConfirmPopup', () => {
-		let confirmRef = null;
+	.add(
+		'ConfirmPopup',
 
-		const
-			setConfirmRef = el => confirmRef = el,
+		() => {
+			let confirmRef = null;
 
-			/* eslint-disable */
-			openConfirm = () => confirmRef
-				.open()
-				.then(() => alert('confirm'))
-			/* eslint-enable */
+			const
+				setConfirmRef = el => confirmRef = el,
 
-		return <StoryLayout>
-			<Button onClick={openConfirm}>open confirm</Button>
+				/* eslint-disable */
+				openConfirm = () => confirmRef
+					.open()
+					.then(() => alert('confirm'))
+				/* eslint-enable */
 
-			<ConfirmPopup
-				ref={setConfirmRef}
-				title={text('title', 'Заголовок')}
-				text={text('text', 'Текст')}
-				okName={text('okName', 'Подтвердить')}
-				cancelName={text('cancelName', 'Отмена')}
-				shouldCloseOnOverlayClick={boolean('shouldCloseOnOverlayClick', false)}
-				disableClose={boolean('disableClose', false)}
-			/>
-		</StoryLayout>;
-	})
+			return <StoryLayout>
+				<Button onClick={openConfirm}>open confirm</Button>
 
-	.add('ContentPopup', () => {
-		let contentRef = null;
+				<ConfirmPopup
+					ref={setConfirmRef}
+					title={text('title', 'Заголовок')}
+					text={text('text', 'Текст')}
+					okName={text('okName', 'Подтвердить')}
+					cancelName={text('cancelName', 'Отмена')}
+					shouldCloseOnOverlayClick={boolean('shouldCloseOnOverlayClick', false)}
+					disableClose={boolean('disableClose', false)}
+				/>
+			</StoryLayout>;
+		},
 
-		const
-			setContentRef = el => contentRef = el,
-			openContent = () => contentRef.open();
+		{info: {text: `
+		import {ConfirmPopup} from 'modul-ui';
+		`}}
+	)
 
-		return <StoryLayout>
-			<Button onClick={openContent}>open popup</Button>
+	.add(
+		'ContentPopup',
 
-			<ContentPopup
-				ref={setContentRef}
-				shouldCloseOnOverlayClick={boolean('shouldCloseOnOverlayClick', false)}
-				disableClose={boolean('disableClose', false)}
-			>
-				Содержимое окна
-				<br />
-				<br />
-				<Button onClick={() => contentRef.close()}>Закрыть</Button>
-			</ContentPopup>
-		</StoryLayout>;
-	});
+		() => {
+			let contentRef = null;
+
+			const
+				setContentRef = el => contentRef = el,
+				openContent = () => contentRef.open();
+
+			return <StoryLayout>
+				<Button onClick={openContent}>open popup</Button>
+
+				<ContentPopup
+					ref={setContentRef}
+					shouldCloseOnOverlayClick={boolean('shouldCloseOnOverlayClick', false)}
+					disableClose={boolean('disableClose', false)}
+				>
+					Содержимое окна
+					<br />
+					<br />
+					<Button onClick={() => contentRef.close()}>Закрыть</Button>
+				</ContentPopup>
+			</StoryLayout>;
+		},
+
+		{info: {text: `
+		import {ContentPopup} from 'modul-ui';
+		`}}
+	);

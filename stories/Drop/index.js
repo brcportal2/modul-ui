@@ -25,5 +25,11 @@ export default storiesOf('Drop', module)
 			</Drop>
 		</StoryLayout>,
 
-		{info: {propTablesExclude: [ButtonWithRef, StoryLayout]}}
+		{info: {
+			propTablesExclude: [ButtonWithRef, StoryLayout],
+
+			text: `
+			import {DatePicker} from 'modul-ui';
+			`
+		}}
 	);
