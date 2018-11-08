@@ -54,4 +54,6 @@ Tbody.defaultProps = {
 	emptyMessage: 'По запросу ничего не найдено'
 };
 
+Tbody.displayName = 'Tbody';
+
 export default Tbody;

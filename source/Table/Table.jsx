@@ -11,4 +11,6 @@ Table.propTypes = {
 	className: PropTypes.string
 };
 
+Table.displayName = 'Table';
+
 export default Table;

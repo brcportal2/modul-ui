@@ -31,4 +31,6 @@ Th.propTypes = {
 	onClick: PropTypes.func
 };
 
+Th.displayName = 'Th';
+
 export default Th;

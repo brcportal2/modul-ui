@@ -45,4 +45,6 @@ Radio.propTypes = {
 	disabled: PropTypes.bool,
 };
 
+Radio.displayName = 'Radio';
+
 export default Radio;

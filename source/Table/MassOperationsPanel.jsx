@@ -38,4 +38,6 @@ MassOperationsPanel.propTypes = {
 	})).isRequired
 };
 
+MassOperationsPanel.displayName = 'MassOperationsPanel';
+
 export default MassOperationsPanel;

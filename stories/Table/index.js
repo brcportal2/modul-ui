@@ -99,7 +99,7 @@ export default storiesOf('Table', module)
 				</Table>
 
 				<Table.MassOperationsPanel
-					caption="Выбрано контрагентов:"
+					caption="Выбрано товаров:"
 					numberSelectedItems={2}
 					onResetClick={() => {}}
 
