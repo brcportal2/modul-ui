@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const nib = require('nib');
 
-
 /**
  * Сборка для режима разработки
  */
