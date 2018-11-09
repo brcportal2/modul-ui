@@ -1,6 +1,5 @@
 import AmountFormat from './AmountFormat';
 import Button from './Button';
-import Checkbox from './Checkbox';
 import DateFormat from './DateFormat';
 import DatePicker from './DatePicker';
 import Drop from './Drop';
@@ -10,13 +9,14 @@ import NumberFormat from './NumberFormat';
 import Popup from './Popup';
 import Select from './Select';
 import ModulTooltip from './ModulTooltip';
+import Checkbox from './Checkbox';
+import Radio from './Radio';
 
 
 
 export {
 	AmountFormat,
 	Button,
-	Checkbox,
 	DateFormat,
 	DatePicker,
 	Drop,
@@ -25,5 +25,7 @@ export {
 	NumberFormat,
 	Popup,
 	Select,
-	ModulTooltip
+	ModulTooltip,
+	Radio,
+	Checkbox,
 };

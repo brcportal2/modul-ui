@@ -47,7 +47,24 @@ const rules = [
 	{
 		test: /\.(jsx|js)$/,
 		exclude: /node_modules/,
-		use: ['babel-loader']
+
+		use: [{
+			loader: 'babel-loader',
+
+			options: {
+				plugins: [
+					"transform-class-properties",
+					"transform-decorators-legacy",
+					"react-docgen"
+				],
+
+				presets: [
+					"es2015",
+					"stage-0",
+					"react"
+				]
+			}
+		}]
 	},
 
 	{

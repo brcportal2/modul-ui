@@ -24,3 +24,18 @@ npm install
 
 npm start
 ```
+
+## Storybook
+
+[https://brcportal2.github.io/modul-ui](https://brcportal2.github.io/modul-ui)
+
+### Локальный запуск
+```
+npm run storybook
+```
+
+### Обновление
+```
+npm run build-storybook
+npm run deploy-storybook
+```
