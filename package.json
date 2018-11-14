@@ -18,9 +18,11 @@
   },
   "dependencies": {
     "accounting": "^0.4.1",
+    "antd": "^3.10.7",
     "classnames": "^2.2.6",
     "imask": "^4.0.0",
     "jquery-datetimepicker": "^2.5.20",
+    "lodash.throttle": "^4.1.1",
     "modul-bootstrap.tooltip": "git://github.com/brcportal2/modul-bootstrap.tooltip#0.0.2",
     "modul-helpers": "^0.1.106",
     "react-modal": "^3.5.1",
