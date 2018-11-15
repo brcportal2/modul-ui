@@ -11,7 +11,7 @@ import Select from './Select';
 import ModulTooltip from './ModulTooltip';
 import Checkbox from './Checkbox';
 import Radio from './Radio';
-import Popover, {ClosablePopover, withClosablePopover} from './Popover';
+//import Popover, {ClosablePopover, withClosablePopover} from './Popover';
 
 
 export {
@@ -28,7 +28,7 @@ export {
 	ModulTooltip,
 	Radio,
 	Checkbox,
-	Popover,
-	ClosablePopover,
-	withClosablePopover
+	// Popover,
+	// ClosablePopover,
+	// withClosablePopover
 };
