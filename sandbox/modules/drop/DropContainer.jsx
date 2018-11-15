@@ -4,10 +4,10 @@ import ExampleComponent from '../../components/ExampleComponent';
 import Popover, {ClosablePopover} from 'Popover';
 import Drop from "Drop";
 
-const QuickActions = ({closePopup}) => (<div>
+const QuickActions = () => (<div>
 	<ul className="drop-menu">
-		<li><a onClick={closePopup}>Close</a></li>
-		<li><a>target 2</a></li>
+		<li><a>target 1</a></li>
+		<li><a data-close>Закрыть</a></li>
 		<li><a>target 3</a></li>
 		<li><a>target 4</a></li>
 	</ul>
@@ -67,23 +67,30 @@ export default class DropContainer extends Component {
 					</Popover>
 				</ExampleComponent>
 
-				<ExampleComponent name='Popover content component'>
+				<ExampleComponent name='Popover internal state'>
 					<ClosablePopover trigger="click"
-									 content={QuickActions}>
+									 content={<QuickActions/>}>
 						<button className="button small icon-plus" type="primary">Click me</button>
 					</ClosablePopover>
 				</ExampleComponent>
 
-				<ExampleComponent name='Popover content node'>
+				<ExampleComponent name='Popover external state'>
 					<ClosablePopover trigger="click"
+									 onVisibleChange={visible => this.setState({visible})}
+									 visible={this.state.visible}
 									 content={(<ul className="drop-menu">
 										 <li><a data-close>{time}</a></li>
-										 <li><a>target 2</a></li>
+										 <li><a data-close="1">target 2</a></li>
 										 <li><a>target 3</a></li>
 										 <li><a>target 4</a></li>
+										 <QuickActions/>
 									 </ul>)}>
 						<button className="button small icon-plus" type="primary">Click me</button>
 					</ClosablePopover>
+
+					<button className="button small icon-close" onClick={() => this.setState({visible: true})}>Show
+						external popup
+					</button>
 				</ExampleComponent>
 			</div>
 		);

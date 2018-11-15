@@ -8,52 +8,48 @@ import Popover from "./Popover";
  */
 export function withClosablePopover(PopoverComponent) {
 	class WithClosablePopover extends React.Component {
-		state = {
-			visible: false,
-		};
-
-		handleVisibleChange = visible => {
-			this.setState({
-				visible,
-			});
-		};
-
-		hide = () => {
-			this.setState({visible: false});
-		};
-
-		bindCloseEvent(content) {
-			const self = this;
-			return React.Children.map(content, c => {
-				if (c && c.props) {
-					let props = null;
-					let children = c.props.children ? this.bindCloseEvent(c.props.children) : null;
-					if (c.props["data-close"]) {
-						props = {
-							onClick: () => {
-								self.hide();
-								c.props.onClick && c.props.onClick();
-							}
-						};
-					}
-					if (children || props)
-						return React.cloneElement(c, props, children);
-				}
-				return c;
-			});
+		constructor(props) {
+			super(props);
+			this.state = {
+				visible: !!props.visible
+			};
 		}
 
-		render() {
-			const {content: Content, children, transitionName = null} = this.props;
+		static getDerivedStateFromProps(nextProps) {
+			if ('visible' in nextProps) {
+				return {visible: nextProps.visible};
+			}
+			return null;
+		}
 
-			//если передают контент то биндим сразу data-close
-			const popoverContent = React.isValidElement(Content)
-				? this.bindCloseEvent(Content)
-				: <Content closePopup={this.hide} />;
-				/*eslint-disable*/
-			return <PopoverComponent {...this.props} transitionName={transitionName} content={popoverContent}
-									 onVisibleChange={this.handleVisibleChange} visible={this.state.visible}
-			>{children}</PopoverComponent>;
+		handleVisibleChange = visible => {
+			const {onVisibleChange} = this.props;
+			//если нет в пропсах то состояние внутреннее
+			if (!('visible' in this.props)) {
+				this.setState({visible});
+			}
+			onVisibleChange && onVisibleChange(visible);
+		};
+
+		onClickInside = event => {
+			if (event
+				&& event.target
+				&& event.target.hasAttribute('data-close')) {
+				this.handleVisibleChange(false);
+			}
+		};
+
+		render() {
+			/*eslint-disable*/
+			const {content, children, transitionName = null} = this.props;
+
+			return <PopoverComponent {...this.props}
+									 transitionName={transitionName}
+									 content={<div onClick={this.onClickInside}>{content}</div>}
+									 onVisibleChange={this.handleVisibleChange}
+									 visible={this.state.visible}>
+				{children}
+			</PopoverComponent>;
 			/*eslint-enable*/
 		}
 	}
