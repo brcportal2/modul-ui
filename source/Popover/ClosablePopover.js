@@ -1,6 +1,11 @@
 import React from "react";
 import Popover from "./Popover";
 
+const hasCloseAttribute = target => {
+	return target && (target.hasAttribute('data-close')
+		|| (target.parentElement && hasCloseAttribute(target.parentElement)));
+};
+
 /**
  *
  * @param PopoverComponent {Popover}
@@ -32,9 +37,7 @@ export function withClosablePopover(PopoverComponent) {
 		};
 
 		onClickInside = event => {
-			if (event
-				&& event.target
-				&& event.target.hasAttribute('data-close')) {
+			if (event && hasCloseAttribute(event.target)) {
 				this.handleVisibleChange(false);
 			}
 		};

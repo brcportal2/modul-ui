@@ -74,6 +74,18 @@ export default class DropContainer extends Component {
 					</ClosablePopover>
 				</ExampleComponent>
 
+				<ExampleComponent name='Popover internal state (zone click)'>
+					<ClosablePopover trigger="click"
+									 content={<ul data-close className="drop-menu">
+										 <li><a>{time}</a></li>
+										 <li><a>target 2</a></li>
+										 <li><a>target 3</a></li>
+										 <li><a>target 4</a></li>
+									 </ul>}>
+						<button className="button small icon-plus" type="primary">Click me</button>
+					</ClosablePopover>
+				</ExampleComponent>
+
 				<ExampleComponent name='Popover external state'>
 					<ClosablePopover trigger="click"
 									 onVisibleChange={visible => this.setState({visible})}
