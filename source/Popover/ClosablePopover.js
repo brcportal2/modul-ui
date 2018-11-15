@@ -2,8 +2,16 @@ import React from "react";
 import Popover from "./Popover";
 
 const hasCloseAttribute = target => {
-	return target && (target.hasAttribute('data-close')
-		|| (target.parentElement && hasCloseAttribute(target.parentElement)));
+	if (!target)
+		return false;
+	if (target.hasAttribute('data-close'))
+		return true;
+
+	if (target.hasAttribute('data-popover-end'))
+		return false;
+
+	if (target.parentElement)
+		return hasCloseAttribute(target.parentElement);
 };
 
 /**
@@ -48,7 +56,7 @@ export function withClosablePopover(PopoverComponent) {
 
 			return <PopoverComponent {...this.props}
 									 transitionName={transitionName}
-									 content={<div onClick={this.onClickInside}>{content}</div>}
+									 content={<div data-popover-end onClick={this.onClickInside}>{content}</div>}
 									 onVisibleChange={this.handleVisibleChange}
 									 visible={this.state.visible}>
 				{children}

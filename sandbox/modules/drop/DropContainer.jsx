@@ -17,20 +17,23 @@ const QuickActions = () => (<div>
 export default class DropContainer extends Component {
 	constructor(props) {
 		super(props);
-		setInterval(() => {
-			this.setState({
-				data: new Date(),
-			});
-		}, 1000);
+		// setInterval(() => {
+		// 	this.setState({
+		// 		...this.state,
+		// 		data: new Date(),
+		// 	});
+		// }, 1000);
 	}
 
 	state = {
-		data: new Date()
+		data: new Date(),
+		visible: false
 	};
 
 	render() {
 		//const data = ;
 		const time = this.state.data.toLocaleTimeString();
+		const {visible}=this.state;
 		return (
 			<div>
 				<ExampleComponent name='Drop'>
@@ -100,9 +103,10 @@ export default class DropContainer extends Component {
 						<button className="button small icon-plus" type="primary">Click me</button>
 					</ClosablePopover>
 
-					<button className="button small icon-close" onClick={() => this.setState({visible: true})}>Show
-						external popup
+					<button className="button small icon-close"
+							onClick={() => this.setState({visible:false})}>hide
 					</button>
+
 				</ExampleComponent>
 			</div>
 		);
