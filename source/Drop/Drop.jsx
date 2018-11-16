@@ -4,9 +4,15 @@ import PropTypes from 'prop-types';
 import TetherDrop from 'tether-drop';
 
 const checkTargetOrTargetParentHasCloseAttribute = target => {
-	if (target && target.hasAttribute('data-close')) {
+	if (!target)
+		return false;
+
+	if (target.hasAttribute('data-close')) {
 		return true;
 	}
+
+	if (target.hasAttribute("data-content-wrapper"))
+		return false;
 
 	if (target.parentElement)
 		return checkTargetOrTargetParentHasCloseAttribute(target.parentElement);
@@ -79,7 +85,10 @@ class Drop extends React.Component {
 			throw new Error('Child element with class drop-content must be specified');
 		}
 
-		return React.cloneElement(dropContent, {onClick: this.dropContentClickHandler});
+		return React.cloneElement(dropContent, {
+			onClick: this.dropContentClickHandler,
+			"data-content-wrapper": 1
+		});
 	}
 
 	dropContentClickHandler = event => {
