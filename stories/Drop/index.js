@@ -15,7 +15,7 @@ export default storiesOf('Drop', module)
 				<div className="drop-content">
 					<div className="drop-content-inner">
 						<ul className="drop-menu">
-							<li>target 1</li>
+							<li data-close="1">target 1</li>
 							<li>target 2</li>
 							<li>target 3</li>
 							<li>target 4</li>
