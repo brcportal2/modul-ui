@@ -76,7 +76,7 @@ class Popup extends React.Component {
 				shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
 				onRequestClose={this.handleRequestClose}>
 				<div className={classNames}>
-					{!disableClose && <a className="popup_close icon-close" onClick={::this.handleRequestClose} />}
+					{!disableClose && <a className="popup_close icon-close" onClick={this.handleRequestClose} />}
 					{children}
 				</div>
 			</BaseModal>
