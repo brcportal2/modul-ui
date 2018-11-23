@@ -5,15 +5,17 @@ import {ButtonWithRef} from '../../source/Button';
 import StoryLayout from '../StoryLayout';
 
 export default storiesOf('Drop', module)
-	.add('default', () =>
-		<StoryLayout>
+	.add(
+		'default',
+
+		() => <StoryLayout>
 			<Drop drop={{position: 'bottom left'}}>
 				<ButtonWithRef className="drop-target">button</ButtonWithRef>
 
 				<div className="drop-content">
 					<div className="drop-content-inner">
 						<ul className="drop-menu">
-							<li>target 1</li>
+							<li data-close="1">target 1</li>
 							<li>target 2</li>
 							<li>target 3</li>
 							<li>target 4</li>
@@ -21,5 +23,13 @@ export default storiesOf('Drop', module)
 					</div>
 				</div>
 			</Drop>
-		</StoryLayout>
+		</StoryLayout>,
+
+		{info: {
+			propTablesExclude: [ButtonWithRef, StoryLayout],
+
+			text: `
+			import {DatePicker} from 'modul-ui';
+			`
+		}}
 	);

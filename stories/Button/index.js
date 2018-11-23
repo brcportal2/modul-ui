@@ -5,51 +5,58 @@ import {boolean, select, text} from '@storybook/addon-knobs';
 import StoryLayout from '../StoryLayout';
 
 export default storiesOf('Button', module)
-	.add('default', () =>
-		<StoryLayout>
-			<Button
-				loading={boolean('loading', false)}
-				disabled={boolean('disabled', false)}
+	.add(
+		'default',
 
-				mdStyle={select(
-					'mdStyle',
+		() =>
+			<StoryLayout>
+				<Button
+					loading={boolean('loading', false)}
+					disabled={boolean('disabled', false)}
 
-					[
-						undefined,
-						'second',
-						'cancel',
-						'dark',
-						'white',
-						'clean',
-						'grey',
-						'light',
-						'light_primary',
-						'light-white',
-						'_gd-orange',
-					],
+					mdStyle={select(
+						'mdStyle',
 
-					undefined
-				)}
+						[
+							undefined,
+							'second',
+							'cancel',
+							'dark',
+							'white',
+							'clean',
+							'grey',
+							'light',
+							'light_primary',
+							'light-white',
+							'_gd-orange',
+						],
 
-				mdSize={select(
-					'mdSize',
+						undefined
+					)}
 
-					[
-						undefined,
-						'xxsmall',
-						'xsmall',
-						'small',
-						'middle',
-						'full',
-						'wide',
-					],
+					mdSize={select(
+						'mdSize',
 
-					undefined
-				)}
+						[
+							undefined,
+							'xxsmall',
+							'xsmall',
+							'small',
+							'middle',
+							'full',
+							'wide',
+						],
 
-				icon={text('icon', undefined)}
-			>
-				Hello Button
-			</Button>
-		</StoryLayout>
+						undefined
+					)}
+
+					icon={text('icon', undefined)}
+				>
+					Hello Button
+				</Button>
+			</StoryLayout>,
+
+		{info: {text: `
+		import {Button} from 'modul-ui';
+		`}}
 	);

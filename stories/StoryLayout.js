@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 
 function StoryLayout(props) {
@@ -7,11 +8,15 @@ function StoryLayout(props) {
 		'alignItems': 'center',
 		'justifyContent': 'center',
 	}}>
-		<div>
+		<div style={props.styleInnerBlock}>
 			{props.children}
 		</div>
 	</div>;
 }
+
+StoryLayout.defaultProps = {
+	styleInnerBlock: {}
+};
 
 StoryLayout.displayName = 'StoryLayout';
 export default StoryLayout;

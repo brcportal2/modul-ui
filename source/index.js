@@ -1,6 +1,5 @@
 import AmountFormat from './AmountFormat';
 import Button from './Button';
-import Checkbox from './Checkbox';
 import DateFormat from './DateFormat';
 import DatePicker from './DatePicker';
 import DatePickerRange from './DatePickerRange';
@@ -16,12 +15,14 @@ import Select from './Select';
 import ModulTooltip from './ModulTooltip';
 import DropZone from './DropZone';
 
+import Checkbox from './Checkbox';
+import Radio from './Radio';
+import Popover, {ClosablePopover, withClosablePopover} from './Popover';
 
 
 export {
 	AmountFormat,
 	Button,
-	Checkbox,
 	DateFormat,
 	DatePicker,
 	DatePickerRange,
@@ -36,4 +37,9 @@ export {
 	Select,
 	ModulTooltip,
 	DropZone,
+	Radio,
+	Checkbox,
+	Popover,
+	ClosablePopover,
+	withClosablePopover,
 };
