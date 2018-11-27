@@ -101,7 +101,7 @@ class Drop extends React.Component {
 		const opts = Object.assign({
 			target: this.dropRef,
 		}, outOptions);
-		opts.content = () => this.container;
+		opts.content = this.container;
 		this.drop = new TetherDrop(opts);
 	}
 
