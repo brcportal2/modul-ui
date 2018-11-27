@@ -4,8 +4,14 @@ exports[`AmountFormat Big value 1`] = `
 <span
   className="test_class"
 >
-  1 234 567 890.00
-     
+  <span
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "1&nbsp;234&nbsp;567&nbsp;890.00",
+      }
+    }
+  />
+   
   <span
     className="cur ruble"
   >
@@ -20,8 +26,14 @@ exports[`AmountFormat ClassName 1`] = `
 <span
   className="test_class"
 >
-  123 456.00
-     
+  <span
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "123&nbsp;456.00",
+      }
+    }
+  />
+   
   <span
     className="cur ruble"
   >
@@ -36,8 +48,14 @@ exports[`AmountFormat Currency EUR 1`] = `
 <span
   className="test_class"
 >
-  1 234 567 890.00
-     
+  <span
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "1&nbsp;234&nbsp;567&nbsp;890.00",
+      }
+    }
+  />
+   
   <span
     className="cur euro"
   >
@@ -52,8 +70,14 @@ exports[`AmountFormat Currency RUR 1`] = `
 <span
   className="test_class"
 >
-  1 234 567 890.00
-     
+  <span
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "1&nbsp;234&nbsp;567&nbsp;890.00",
+      }
+    }
+  />
+   
   <span
     className="cur ruble"
   >
@@ -68,8 +92,14 @@ exports[`AmountFormat Currency USD 1`] = `
 <span
   className="test_class"
 >
-  1 234 567 890.00
-     
+  <span
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "1&nbsp;234&nbsp;567&nbsp;890.00",
+      }
+    }
+  />
+   
   <span
     className="cur dollar"
   >
@@ -84,8 +114,14 @@ exports[`AmountFormat Default props 1`] = `
 <span
   className=""
 >
-  123 456.00
-     
+  <span
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "123&nbsp;456.00",
+      }
+    }
+  />
+   
   <span
     className="cur ruble"
   >
@@ -100,8 +136,14 @@ exports[`AmountFormat Default value 1`] = `
 <span
   className=""
 >
-  123 456.00
-     
+  <span
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "123&nbsp;456.00",
+      }
+    }
+  />
+   
   <span
     className="cur ruble"
   >
@@ -116,8 +158,14 @@ exports[`AmountFormat First zero 1`] = `
 <span
   className="test_class"
 >
-  123.00
-     
+  <span
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "123.00",
+      }
+    }
+  />
+   
   <span
     className="cur ruble"
   >
