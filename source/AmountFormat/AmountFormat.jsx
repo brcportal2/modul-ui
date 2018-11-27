@@ -30,14 +30,16 @@ export default class AmountFormat extends Component {
 		]),
 		precision: PropTypes.number,
 		def: PropTypes.string,
-		className: PropTypes.string
+		className: PropTypes.string,
+		whiteSpace: PropTypes.string,
 	};
 
 	static defaultProps = {
 		currency: 'RUR',
 		precision: 2,
 		def: '',
-		className: ''
+		className: '',
+		whiteSpace: '&nbsp;'
 	};
 
 	clear = value => {
@@ -52,6 +54,7 @@ export default class AmountFormat extends Component {
 			def,
 			currency,
 			precision,
+			whiteSpace,
 			...props
 		} = this.props;
 
@@ -62,12 +65,11 @@ export default class AmountFormat extends Component {
 
 		const val = parseFloat(this.clear(value));
 		const formatted = !isNaN(val)
-			? accounting.formatNumber(val, precision, ' ')
+			? accounting.formatNumber(val, precision, whiteSpace)
 			: def;
-
 		return (
 			<span {...props}>
-				{formatted} &nbsp; <CurrencySymbol value={currency} />
+				<span dangerouslySetInnerHTML={{__html: formatted}} />&nbsp;<CurrencySymbol value={currency} />
 			</span>
 		);
 	}
