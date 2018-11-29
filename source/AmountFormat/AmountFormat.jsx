@@ -10,6 +10,8 @@ const CurrencySymbol = ({value}) => {
 			return <span className='cur dollar'><span>$</span></span>;
 		case 'EUR':
 			return <span className='cur euro'><span>€</span></span>;
+		case 'CNY':
+			return (<span class="cur cny"><span>¥</span></span>);
 		default:
 			return <span className='cur ruble'><span>р.</span></span>;
 	}
@@ -26,7 +28,8 @@ export default class AmountFormat extends Component {
 		currency: PropTypes.oneOf([
 			'RUR',
 			'USD',
-			'EUR'
+			'EUR',
+			'CNY',
 		]),
 		precision: PropTypes.number,
 		def: PropTypes.string,
