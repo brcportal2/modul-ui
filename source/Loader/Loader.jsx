@@ -5,7 +5,7 @@ export default class Loader extends Component {
 	static displayName = 'Loader';
 
 	static propTypes = {
-		children: PropTypes.element,
+		children: PropTypes.node,
 		loading: PropTypes.bool,
 		className: PropTypes.string,
 		style: PropTypes.object
