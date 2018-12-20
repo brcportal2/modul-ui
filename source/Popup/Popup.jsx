@@ -64,12 +64,14 @@ class Popup extends React.Component {
 			shouldCloseOnOverlayClick,
 			disableClose,
 			layerClassName,
+			...otherProps
 		} = this.props;
 
 		const classNames = ['popup_layer popup_action_default', layerClassName || ''].join(' ');
 
 		return (
 			<BaseModal
+				{...otherProps}
 				isOpen={this.state.isOpen}
 				appElement={appElement}
 				onAfterOpen={onAfterOpen}
