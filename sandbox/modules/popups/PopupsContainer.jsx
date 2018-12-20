@@ -65,7 +65,7 @@ export default class PopupsContainer extends Component {
 					<div className="row mb12">
 						<div className='col-4'>
 							<button className='button small w140px' onClick={this._openPopupWithoutState}>Popup without state</button>
-							<Popup ref={e => this.popupRef = e}>
+							<Popup ref={e => this.popupRef = e} overlayClassName="modal example">
 								<h1>this is "Popup without state"</h1>
 							</Popup>
 						</div>
