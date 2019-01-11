@@ -10,6 +10,8 @@ const CurrencySymbol = ({value}) => {
 			return <span className='cur dollar'><span>$</span></span>;
 		case 'EUR':
 			return <span className='cur euro'><span>€</span></span>;
+		case 'CNY':
+			return (<span class="cur cny"><span>¥</span></span>);
 		default:
 			return <span className='cur ruble'><span>р.</span></span>;
 	}
@@ -26,18 +28,21 @@ export default class AmountFormat extends Component {
 		currency: PropTypes.oneOf([
 			'RUR',
 			'USD',
-			'EUR'
+			'EUR',
+			'CNY',
 		]),
 		precision: PropTypes.number,
 		def: PropTypes.string,
-		className: PropTypes.string
+		className: PropTypes.string,
+		whiteSpace: PropTypes.string,
 	};
 
 	static defaultProps = {
 		currency: 'RUR',
 		precision: 2,
 		def: '',
-		className: ''
+		className: '',
+		whiteSpace: '&nbsp;'
 	};
 
 	clear = value => {
@@ -52,6 +57,7 @@ export default class AmountFormat extends Component {
 			def,
 			currency,
 			precision,
+			whiteSpace,
 			...props
 		} = this.props;
 
@@ -62,12 +68,11 @@ export default class AmountFormat extends Component {
 
 		const val = parseFloat(this.clear(value));
 		const formatted = !isNaN(val)
-			? accounting.formatNumber(val, precision, ' ')
+			? accounting.formatNumber(val, precision, whiteSpace)
 			: def;
-
 		return (
 			<span {...props}>
-				{formatted} &nbsp; <CurrencySymbol value={currency} />
+				<span dangerouslySetInnerHTML={{__html: formatted}} />&nbsp;<CurrencySymbol value={currency} />
 			</span>
 		);
 	}

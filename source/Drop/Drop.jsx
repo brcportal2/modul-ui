@@ -3,7 +3,22 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import TetherDrop from 'tether-drop';
 
+const checkTargetOrTargetParentHasCloseAttribute = target => {
+	if (!target)
+		return false;
 
+	if (target.hasAttribute('data-close')) {
+		return true;
+	}
+
+	if (target.hasAttribute("data-content-wrapper"))
+		return false;
+
+	if (target.parentElement)
+		return checkTargetOrTargetParentHasCloseAttribute(target.parentElement);
+
+	return false;
+};
 
 class Drop extends React.Component {
 	static displayName = 'Drop';
@@ -69,7 +84,16 @@ class Drop extends React.Component {
 		if (!dropContent) {
 			throw new Error('Child element with class drop-content must be specified');
 		}
-		return dropContent;
+
+		return React.cloneElement(dropContent, {
+			onClick: this.dropContentClickHandler,
+			"data-content-wrapper": 1
+		});
+	}
+
+	dropContentClickHandler = event => {
+		if (event && event.target && checkTargetOrTargetParentHasCloseAttribute(event.target))
+			this.close();
 	}
 
 	initDrop() {
@@ -77,29 +101,8 @@ class Drop extends React.Component {
 		const opts = Object.assign({
 			target: this.dropRef,
 		}, outOptions);
-		opts.content = () => this.container;
+		opts.content = this.container;
 		this.drop = new TetherDrop(opts);
-	}
-
-	bindCloseEvent(content) {
-		const self = this;
-		return React.Children.map(content, c => {
-			if (c && c.props) {
-				let props = null;
-				let children = c.props.children ? this.bindCloseEvent(c.props.children) : null;
-				if (c.props["data-close"]) {
-					props = {
-						onClick: () => {
-							self.close();
-							c.props.onClick && c.props.onClick();
-						}
-					};
-				}
-				if (children || props)
-					return React.cloneElement(c, props, children);
-			}
-			return c;
-		});
 	}
 
 	destroyDrop() {

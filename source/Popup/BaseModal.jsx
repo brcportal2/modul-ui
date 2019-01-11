@@ -13,7 +13,7 @@ import Modal from 'react-modal';
  * @returns {XML}
  * @constructor
  */
-const BaseModal = ({shouldCloseOnOverlayClick = true, children, isOpen, appElement, onAfterOpen, onRequestClose}) => {
+const BaseModal = ({shouldCloseOnOverlayClick = true, children, isOpen, appElement, onAfterOpen, onRequestClose, portalClassName='poss' , overlayClassName}) => {
 	const handleOverlayOnClick = event => {
 		if (shouldCloseOnOverlayClick) {
 			onRequestClose && onRequestClose(event);
@@ -27,14 +27,14 @@ const BaseModal = ({shouldCloseOnOverlayClick = true, children, isOpen, appEleme
 	};
 
 	return (<Modal isOpen={isOpen}
-		portalClassName="poss"
+		portalClassName={portalClassName}
 		contentLabel=""
 		appElement={appElement}
 		onRequestClose={onRequestClose}
 		shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
 		onAfterOpen={onAfterOpen}
 		className="popup_table"
-		overlayClassName="popup_overlay">
+		overlayClassName={'popup_overlay ' + (overlayClassName?overlayClassName:'')}>
 		<div className="popup_cell" onClick={preventEvents}>
 			{children}
 			<div className="popup_backdrop" onClick={handleOverlayOnClick} />
@@ -53,6 +53,8 @@ BaseModal.propTypes = {
 	onAfterOpen: PropTypes.func,
 	onRequestClose: PropTypes.func,
 	shouldCloseOnOverlayClick: PropTypes.bool,
+	portalClassName: PropTypes.string,
+	overlayClassName: PropTypes.string,
 };
 
 export default BaseModal;

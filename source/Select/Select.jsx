@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+/* eslint-disable */
 import Selector, {Creatable, Async, AsyncCreatable} from 'react-select';
-
+import React from 'react';
+import PropTypes from  'prop-types';
 
 const stringOrNode = PropTypes.oneOfType([
 	PropTypes.string,
 	PropTypes.node
 ]);
 
-export default class Select extends Component {
+class Select extends React.Component {
 	static propTypes = {
 		addLabelText: PropTypes.string,       // placeholder displayed when you want to add a label on a multi-value input
 		'aria-describedby': PropTypes.string,	// HTML ID(s) of element(s) that should be used to describe this input (for assistive tech)
@@ -81,16 +81,48 @@ export default class Select extends Component {
 		valueRenderer: PropTypes.func,        // valueRenderer: function (option) {}
 		wrapperStyle: PropTypes.object,       // optional style to apply to the component wrapper
 		creatable: PropTypes.bool, 			  // если можно вводить свой вариант (текст)
+		tooltipProps: PropTypes.object,       // для пробрасывания нужных пропсов в тултип
 	};
 
-	static defaultProps = {
-		searchable: false,
-		openOnFocus: false,
-		creatable: false,
-		onBlurResetsInput: false,
-		noResultsText: 'Введите текст поиска',
-		promptTextCreator: label => `Создать: ${label}`
-	};
+	render() {
+		let {
+			searchable = false,
+			noResultsText = 'Введите текст поиска',
+			openOnFocus = false,
+			creatable = false,
+			promptTextCreator = label => `Создать: ${label}`,
+			onBlurResetsInput = false,
+			tooltipProps,
+			...props
+		} = this.props;
+		const additionalProps = {onBlurResetsInput, openOnFocus, noResultsText, searchable};
+		const value = props.value || props.selectValue || undefined;
+		if (creatable || props.loadOptions) {
+			let SelectComponent;
+			if (creatable && props.loadOptions){
+				SelectComponent = AsyncCreatable;
+			} else {
+				SelectComponent = creatable ?  Creatable : Async;
+			}
+			return (
+				<div {...tooltipProps}>
+					<SelectComponent ref={s => this.el = s}
+									 promptTextCreator={promptTextCreator}
+									 {...props}
+									 {...additionalProps}
+									 value={value}
+					/>
+				</div>);
+		} else {
+			return (<div {...tooltipProps}>
+				<Selector ref={s => this.el = s}
+						  {...props}
+						  {...additionalProps}
+						  value={value}
+				/>
+			</div>);
+		}
+	}
 
 	setFocus() {
 		this.el && this.el.focus();
@@ -99,49 +131,7 @@ export default class Select extends Component {
 	inFocus() {
 		this.el && this.el.inFocus;
 	}
-
-	render() {
-		const {
-			searchable,
-			noResultsText,
-			openOnFocus,
-			creatable,
-			onBlurResetsInput,
-			...props
-		} = this.props;
-
-		const additionalProps = {
-			onBlurResetsInput,
-			openOnFocus,
-			noResultsText,
-			searchable
-		};
-
-		if (creatable || props.loadOptions) {
-			let SelectComponent;
-
-			if (creatable && props.loadOptions) {
-				SelectComponent = AsyncCreatable;
-			} else {
-				SelectComponent = creatable ? Creatable : Async;
-			}
-
-			return (
-				<SelectComponent
-					ref={el => this.el = el}
-					{...props}
-					{...additionalProps}
-				/>
-			);
-		}
-		else {
-			return (
-				<Selector
-					ref={s => this.el = s}
-					{...props}
-					{...additionalProps}
-				/>
-			);
-		}
-	}
 }
+
+Select.propTypes = Selector.propTypes;
+export default Select;

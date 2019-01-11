@@ -1,6 +1,6 @@
 {
   "name": "modul-ui",
-  "version": "0.0.16",
+  "version": "0.0.26",
   "description": "ModulBank UI React Components",
   "main": "./lib",
   "module": "./source",
@@ -18,11 +18,13 @@
   },
   "dependencies": {
     "accounting": "^0.4.1",
+    "antd": "^3.10.7",
     "classnames": "^2.2.6",
     "imask": "^4.0.0",
     "jquery-datetimepicker": "^2.5.20",
     "modul-bootstrap.tooltip": "git://github.com/brcportal2/modul-bootstrap.tooltip#0.0.2",
     "modul-helpers": "^0.1.107",
+    "react-dropzone": "^5.0.1",
     "react-modal": "^3.5.1",
     "react-select": "^1.2.1",
     "react-waypoint": "^8.0.3",
