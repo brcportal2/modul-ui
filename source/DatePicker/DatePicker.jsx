@@ -97,7 +97,14 @@ export default class DatePicker extends Component {
 			if (!this.isEqualDates(props.value, this.getValue())) {
 				if (this.$input) {
 					if (props.value) {
-						this.$input.datetimepicker({value: props.value});
+						let valueToSet = props.value;
+
+						// prevent mutation props
+						if (valueToSet && valueToSet instanceof Date) {
+							valueToSet = new Date(valueToSet);
+						}
+
+						this.$input.datetimepicker({value: valueToSet});
 					} else {
 						this.$input.datetimepicker('reset');
 					}
@@ -117,6 +124,11 @@ export default class DatePicker extends Component {
 			if (!self.isEqualDates(dp, self.props.value))
 				self.handleChange(dp);
 		};
+
+		// prevent mutation props
+		if (options.value && options.value instanceof Date) {
+			options.value = new Date(options.value);
+		}
 
 		this.$input = $input.datetimepicker(options);
 	}
