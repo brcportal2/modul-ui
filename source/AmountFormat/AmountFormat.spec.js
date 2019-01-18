@@ -1,3 +1,4 @@
+/*eslint-env jest */
 import React from 'react';
 import renderer from 'react-test-renderer';
 
@@ -99,6 +100,18 @@ describe('AmountFormat', () => {
 				className='test_class'
 				def='not date'
 				value={null}
+			/>
+		);
+		expect(component.toJSON()).toMatchSnapshot();
+	});
+
+	test('Null currency', () => {
+		const component = renderer.create(
+			<AmountFormat
+				className="test_class"
+				def='not date'
+				value="123"
+				currency={null}
 			/>
 		);
 		expect(component.toJSON()).toMatchSnapshot();
