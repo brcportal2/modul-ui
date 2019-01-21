@@ -18,6 +18,7 @@ import DropZone from './DropZone';
 import Checkbox from './Checkbox';
 import Radio from './Radio';
 import Popover, {ClosablePopover, withClosablePopover} from './Popover';
+import Notify from './Notify';
 
 
 export {
@@ -42,4 +43,5 @@ export {
 	Popover,
 	ClosablePopover,
 	withClosablePopover,
+	Notify,
 };
