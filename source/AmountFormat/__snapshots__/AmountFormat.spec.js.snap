@@ -176,6 +176,21 @@ exports[`AmountFormat First zero 1`] = `
 </span>
 `;
 
+exports[`AmountFormat Null currency 1`] = `
+<span
+  className="test_class"
+>
+  <span
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "123.00",
+      }
+    }
+  />
+   
+</span>
+`;
+
 exports[`AmountFormat Null value 1`] = `
 <span
   className="test_class"

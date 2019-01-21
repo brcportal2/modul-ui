@@ -72,7 +72,10 @@ export default class AmountFormat extends Component {
 			: def;
 		return (
 			<span {...props}>
-				<span dangerouslySetInnerHTML={{__html: formatted}} />&nbsp;<CurrencySymbol value={currency} />
+				<span dangerouslySetInnerHTML={{__html: formatted}} />&nbsp;
+				{
+					currency && <CurrencySymbol value={currency} />
+				}
 			</span>
 		);
 	}
