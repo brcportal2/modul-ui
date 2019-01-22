@@ -7,3 +7,4 @@ lib
 .out-storybook
 .cache
 .DS_Store
+.docz

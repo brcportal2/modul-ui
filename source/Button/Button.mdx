@@ -1,0 +1,62 @@
+---
+name: Button
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz'
+import Button from './Button.jsx'
+
+# Button
+
+Кнопки делают общие действия более очевидными и помогают пользователям более легко выполнять их. Кнопки используют текст и иногда значки, чтобы сообщить о действии, которое произойдет, когда пользователь коснется их.
+
+## Properties
+
+<PropsTable of={Button} />
+
+## Basic usage
+
+<Playground>
+  <Button>Click me</Button>
+</Playground>
+
+## With different types
+
+<Playground>
+  <Button type="button">Click me</Button>
+  <Button type="reset">Click me</Button>
+  <Button type="submit">Click me</Button>
+</Playground>
+
+## With different sizes
+
+<Playground>
+  <Button mdSize="xxsmall">Click me</Button>
+  <Button mdSize="xsmall">Click me</Button>
+  <Button mdSize="small">Click me</Button>
+  <Button mdSize="middle">Click me</Button>
+  <Button mdSize="full">Click me</Button>
+  <Button mdSize="wide">Click me</Button>
+</Playground>
+
+## With different styles
+
+<Playground>
+  <Button mdStyle="second">Click me</Button>
+  <Button mdStyle="cancel">Click me</Button>
+  <Button mdStyle="dark">Click me</Button>
+  <Button mdStyle="white">Click me</Button>
+  <Button mdStyle="clean">Click me</Button>
+  <Button mdStyle="grey">Click me</Button>
+  <Button mdStyle="light">Click me</Button>
+  <Button mdStyle="light_primary">Click me</Button>
+  <Button mdStyle="light-white">Click me</Button>
+  <Button mdStyle="_gd-orange">Click me</Button>
+</Playground>
+
+## Loading
+
+<Button mdSize="middle" loading>Click me</Button>
+
+## Disabled
+<Button mdSize="middle" disabled>Click me</Button>

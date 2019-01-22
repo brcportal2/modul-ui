@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function StoryLayout(props) {
 	return <div style={{
@@ -16,6 +17,11 @@ function StoryLayout(props) {
 
 StoryLayout.defaultProps = {
 	styleInnerBlock: {}
+};
+
+StoryLayout.propTypes = {
+	children: PropTypes.element,
+	styleInnerBlock: PropTypes.string
 };
 
 StoryLayout.displayName = 'StoryLayout';
