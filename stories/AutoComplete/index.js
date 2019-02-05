@@ -39,8 +39,8 @@ class CustomInput extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<span>Поиск:</span>
+			<div className="input_group">
+				<div className="input_title">Поиск:</div>
 				<input
 					type="text"
 					onKeyDown={this.handleKeyDown}

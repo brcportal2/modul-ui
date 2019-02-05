@@ -7,7 +7,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const options = {
 	pathPublish: '.publish',
 	source: [
-		'source/**/*.{js,jsx}',
+		'source/**/*.{js,jsx,styl}',
 		'!source/**/*.spec.*'
 	],
 	dataPublish: [
