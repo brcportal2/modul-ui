@@ -1,10 +1,12 @@
+/* eslint-disable no-mixed-spaces-and-tabs,react/prop-types */
 import React from 'react';
 import {storiesOf} from '@storybook/react';
 import StoryLayout from '../StoryLayout';
 //import {CompleteSimple} from "./CompleteSimple";
 import AutoComplete from 'AutoComplete';
-import {array} from '@storybook/addon-knobs';
+import {array, boolean} from '@storybook/addon-knobs';
 import PropTypes from 'prop-types';
+//import { Input } from 'antd';
 
 const dataSource = ['Вася', 'Петя', 'Маша', 'Коля'];
 
@@ -26,8 +28,20 @@ class CustomInput extends React.Component {
 		console.log('change', e);
 	};
 
+	//onPressEnter
+	handleKeyDown = e => {
+		this.props.onKeyDown && this.props.onKeyDown(e);
+	};
+
+	handleKeyUp = e => {
+		this.props.onKeyUp && this.props.onKeyUp(e);
+	};
+
 	render() {
-		return (<div>Поиск: <input type="text" value={this.props.value} onChange={this.onChange} /></div>);
+		return <div>Поиск: <input type="text" value={this.props.value}
+								  onKeyDown={this.handleKeyDown}
+								  onKeyUp={this.handleKeyUp}
+								  onChange={this.onChange} /></div>;
 	}
 }
 
@@ -37,6 +51,7 @@ export default storiesOf('AutoComplete', module)
 		() => {
 			return (<StoryLayout>
 				<AutoComplete
+					allowClear={boolean('allowClear', true)}
 					dataSource={array('dataSource', dataSource)}
 					onSelect={value => {
 						//eslint-disable-next-line
@@ -64,6 +79,7 @@ export default storiesOf('AutoComplete', module)
 		() => {
 			return (<StoryLayout>
 				<AutoComplete
+					allowClear={boolean('allowClear', true)}
 					dataSource={array('dataSource', dataSource)}
 					onSelect={value => {
 						//eslint-disable-next-line
