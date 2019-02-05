@@ -27,7 +27,16 @@ class CustomInput extends React.Component {
 	};
 
 	render() {
-		return (<div>Поиск: <input type="text" value={this.props.value} onChange={this.onChange} /></div>);
+		return (
+			<div>
+				<span>Поиск:</span>
+				<input
+					type="text"
+					value={this.props.value}
+					onChange={this.onChange} 
+				/>
+			</div>
+		);
 	}
 }
 
