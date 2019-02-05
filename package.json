@@ -24,7 +24,6 @@
     "jquery-datetimepicker": "^2.5.20",
     "modul-bootstrap.tooltip": "git://github.com/brcportal2/modul-bootstrap.tooltip#0.0.2",
     "modul-helpers": "^0.1.107",
-    "modul.markup.ui-kit": "git+ssh://git@gitlab.moduldev.ru/markup/Markup.Common#v1.0.2",
     "q": "^1.5.1",
     "react-dropzone": "^5.0.1",
     "react-modal": "^3.5.1",
