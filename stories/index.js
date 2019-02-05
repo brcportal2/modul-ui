@@ -1,4 +1,4 @@
-import '../../Markup.Kassa/markup/stylus/style_kassa.styl';
+// import '../../Markup.Kassa/markup/stylus/style_kassa.styl';
 import Button from './Button';
 import Format from './Format';
 import DatePicker from './DatePicker';
