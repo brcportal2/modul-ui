@@ -8,6 +8,7 @@ import * as Select from './select';
 import * as Drop from './drop';
 import * as Popups from './popups';
 import * as ModulTooltip from './modulTooltip';
+import * as Autocomplete from './autocomplete';
 
 
 export default [
@@ -21,4 +22,5 @@ export default [
 	Drop,
 	Popups,
 	ModulTooltip,
+	Autocomplete,
 ];

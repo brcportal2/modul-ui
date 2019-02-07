@@ -12,6 +12,7 @@ const options = {
 	],
 	dataPublish: [
 		'*.md',
+		'source/**/*.styl',
 		'package.json'
 	]
 };
