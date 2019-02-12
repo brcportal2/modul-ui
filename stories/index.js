@@ -1,4 +1,4 @@
-// import '../../Markup.Kassa/markup/stylus/style_kassa.styl';
+import '../../Markup.Kassa/markup/stylus/style_kassa.styl';
 import Button from './Button';
 import Format from './Format';
 import DatePicker from './DatePicker';
@@ -9,6 +9,7 @@ import Popup from './Popup';
 import Form from './Form';
 import Table from './Table';
 import AutoComplete from './AutoComplete';
+import FileUpload from './FileUpload';
 
 export default () => {
 	Button();
@@ -21,4 +22,5 @@ export default () => {
 	Form();
 	Table();
 	AutoComplete();
+	FileUpload();
 };
