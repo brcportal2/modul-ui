@@ -7,7 +7,6 @@ export class FileItem extends React.PureComponent {
 		onDelete: PropTypes.func,
 		fileName: PropTypes.string,
 		downloadLink: PropTypes.string,
-		extensionsMap: PropTypes.object,
 		title: PropTypes.oneOfType([
 			PropTypes.arrayOf(PropTypes.node),
 			PropTypes.node,
@@ -18,26 +17,15 @@ export class FileItem extends React.PureComponent {
 	};
 
 	static defaultProps = {
-		extensionsMap: {
-			'rar': 'rar', //todo добавить всю сетку
-		},
 		centering: false,
 	};
 
-	_getExtensionClass(fileName) {
-		const ext = this._getFileExtension(fileName);
-		return this.props.extensionsMap[ext];
-	}
-
 	_getFileExtension(fileName) {
 		if (!fileName)
-			return null;
+			return '';
 
-		const a = fileName.split(".");
-		if (a.length === 1 || (a[0] === "" && a.length === 2)) {
-			return "";
-		}
-		return a.pop().toLowerCase();    // feel free to tack .toLowerCase() here if you want
+		const arr = fileName.split(".");
+		return arr.length <= 1 ? '' : arr[arr.length - 1];
 	}
 
 	renderFileName() {
@@ -52,7 +40,7 @@ export class FileItem extends React.PureComponent {
 		if (!fileName)
 			return null;
 
-		const classExtension = this._getExtensionClass(fileName);
+		const classExtension = this._getFileExtension(fileName);
 
 		return (<div class="uploaded">
 			{onDelete && <a class="file_delete" onClick={onDelete}/>}

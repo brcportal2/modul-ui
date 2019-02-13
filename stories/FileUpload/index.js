@@ -3,6 +3,7 @@ import React from 'react';
 import {storiesOf} from '@storybook/react';
 import StoryLayout from '../StoryLayout';
 import {FileUpload} from "../../source/DropZone";
+import {FileUploadZone} from "../../source/DropZone/FileUploadZone";
 
 const loading = true;
 
@@ -26,7 +27,16 @@ export default storiesOf('FileUpload', module)
 
 							<FileUpload title="Проект банковской гарантии согласованный с заказчиком проект
 									банковской гарантии согласованный с заказчиком проект банковской гарантии
-									согласованный с заказчиком"/>
+									согласованный с заказчиком"
+										onSelectFile={e => console.log(e.target.files)}/>
+
+							<FileUpload title="Проект">
+								<input type="file" multiple onChange={e => console.log(e.target.files)}/>
+							</FileUpload>
+
+							<FileUploadZone title="File drop zone"
+											onDrop={aceptedFiles => console.log('drop file', aceptedFiles)}
+											onSelectFile={e => console.log('select file', e.target.files)} />
 
 							<FileUpload fileName="document.rar"
 										onDelete={event => console.log('Удалить файл', event)}

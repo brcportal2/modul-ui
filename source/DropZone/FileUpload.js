@@ -6,7 +6,7 @@ import {FileItem} from "./FileItem";
 /**
  * Вторая версия компонента
  */
-export class FileUpload extends React.Component {
+export class FileUpload extends React.PureComponent {
 	static propTypes = {
 		title: PropTypes.oneOfType([
 			PropTypes.arrayOf(PropTypes.node),
@@ -19,47 +19,64 @@ export class FileUpload extends React.Component {
 		columnClass: PropTypes.string,
 		children: PropTypes.object,
 		fileName: PropTypes.string,
-		renderFileItem: PropTypes.oneOfType([
-			PropTypes.arrayOf(PropTypes.node),
-			PropTypes.node,
-			PropTypes.func,
-		]),
-		extensionsMap: PropTypes.object,
 		loading: PropTypes.bool,
 		loadingText: PropTypes.string,
 		downloadLink: PropTypes.string,
 		error: PropTypes.string,
 		progress: PropTypes.number,
-		onDelete: PropTypes.func,
-		renderIcon: PropTypes.oneOfType([
+		isDragActive: PropTypes.bool,
+		isDragAccept: PropTypes.bool,
+		isDragReject: PropTypes.bool,
+		onSelectFile: PropTypes.func,//выбран файл
+		onDelete: PropTypes.func, //Удаление файла
+		renderIcon: PropTypes.oneOfType([ //Рендер доп. блоков
 			PropTypes.func,
-		])
+		]),
+		renderFileItem: PropTypes.oneOfType([ //Рендер выбранного файла
+			PropTypes.arrayOf(PropTypes.node),
+			PropTypes.node,
+			PropTypes.func,
+		]),
+		renderProgress: PropTypes.oneOfType([ //Рендер прогресса файла
+			PropTypes.arrayOf(PropTypes.node),
+			PropTypes.node,
+			PropTypes.func,
+		]),
+		dragCssClass: PropTypes.object,
 	};
 
 	static defaultProps = {
 		buttonClass: 'button light icon-upload small button_file_upload',
 		buttonTitle: 'Загрузить',
 		columnClass: 'col four',
-		loadingText: ''
+		loadingText: '',
+		dragCssClass: {
+			active: 'active',
+			accept: 'accept',
+			reject: 'reject',
+		}
 	};
 
 	render() {
-		const {fileName, columnClass, loading, loadingText, error, progress} = this.props;
+		const {
+			fileName, columnClass, loading, loadingText, error,
+			isDragActive, isDragAccept, isDragReject
+		} = this.props;
 		const props = {};
 		if (loading && loadingText) {
 			props['data-loading-text'] = loadingText;
 		}
 
 		const css = `${columnClass} ${loading ? 'loading_block' : ''} ${error ? 'error' : ''}`;
-		const inProgress = progress !== null
-			&& progress !== undefined
-			&& progress >= 0
-			&& progress <= 100
-			&& !fileName;
+		const dragActive = `${isDragActive ? this.props.dragCssClass.active : ''}`;
+		const dragAccept = `${isDragAccept ? this.props.dragCssClass.accept : ''}`;
+		const dragReject = `${isDragReject ? this.props.dragCssClass.reject : ''}`;
+
+		const inProgress = this.inProgress;
 		const isEmpty = !fileName && !inProgress;
 		const hasFile = !!fileName;
 
-		return (<div class={`file_upload_block ${css}`}
+		return (<div class={`file_upload_block ${css} ${dragActive} ${dragAccept} ${dragReject}`}
 					 {...props}>
 			{isEmpty && this.renderEmptyBlock()}
 			{hasFile && this.renderFileItem()}
@@ -67,9 +84,25 @@ export class FileUpload extends React.Component {
 		</div>);
 	}
 
+	get inProgress() {
+		const {progress, fileName} = this.props;
+		return progress !== null
+			&& progress !== undefined
+			&& progress >= 0
+			&& progress <= 100
+			&& !fileName;
+	}
+
+	_handleSelectFile = event => {
+		const {onSelectFile} = this.props;
+		onSelectFile && onSelectFile(event);
+	};
+
 	renderProgress() {
-		const {progress} = this.props;
-		if (progress > 0)
+		const {progress, renderProgress} = this.props;
+		if (renderProgress)
+			return renderProgress(this.props);
+		if (this.inProgress)
 			return (<div class="total-progress-box">
 				<div class={`total-progress progress-${progress}`}/>
 			</div>);
@@ -87,20 +120,20 @@ export class FileUpload extends React.Component {
 			<div class="file_button">
 				<label class={buttonClass}>
 					{buttonTitle}
-					{!children && <input type="file"/>}
+					{!children && <input type="file" onChange={this._handleSelectFile}/>}
+					{children}
 				</label>
 			</div>
 		</React.Fragment>);
 	}
 
 	renderFileItem() {
-		const {onDelete, fileName, renderFileItem, title, extensionsMap, downloadLink, columnClass} = this.props;
+		const {onDelete, fileName, renderFileItem, title, downloadLink, columnClass} = this.props;
 		if (renderFileItem)
 			return renderFileItem(this.props);
 		const centering = (columnClass || '').indexOf('col') > -1;
 		return <FileItem title={title}
 						 centering={centering}
-						 extensionsMap={extensionsMap}
 						 downloadLink={downloadLink}
 						 fileName={fileName}
 						 onDelete={onDelete}/>;
