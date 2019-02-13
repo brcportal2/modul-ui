@@ -30,10 +30,10 @@ export default storiesOf('Tabs', module)
 					hideAdd={boolean('hideAdd', false)}
 				>
 					<Tabs.TabPane tab="Сегодня" key="Day">
-						tab content
+						Tab 1
 					</Tabs.TabPane>
 					<Tabs.TabPane tab="Спринт" key="Sprint">
-						tab content
+						Tab 2
 					</Tabs.TabPane>
 				</Tabs>
 			</StoryLayout>,
