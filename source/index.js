@@ -14,11 +14,11 @@ import Popup from './Popup';
 import Select from './Select';
 import ModulTooltip from './ModulTooltip';
 import DropZone from './DropZone';
-
 import Checkbox from './Checkbox';
 import Radio from './Radio';
 import Popover, {ClosablePopover, withClosablePopover} from './Popover';
 import Notify from './Notify';
+import Tooltip from './Tooltip';
 
 
 export {
@@ -44,4 +44,5 @@ export {
 	ClosablePopover,
 	withClosablePopover,
 	Notify,
+	Tooltip,
 };
