@@ -30,6 +30,7 @@ export class FileUpload extends React.PureComponent {
 		onSelectFile: PropTypes.func,//выбран файл
 		onLabelClick: PropTypes.func,
 		onDelete: PropTypes.func, //Удаление файла
+		centering: PropTypes.bool, //центрирование контента
 		renderIcon: PropTypes.oneOfType([ //Рендер доп. блоков
 			PropTypes.func,
 		]),
@@ -55,7 +56,8 @@ export class FileUpload extends React.PureComponent {
 			active: 'active',
 			accept: 'accept',
 			reject: 'reject',
-		}
+		},
+		centering: true,
 	};
 
 	render() {
@@ -129,10 +131,9 @@ export class FileUpload extends React.PureComponent {
 	}
 
 	renderFileItem() {
-		const {onDelete, fileName, renderFileItem, title, downloadLink, columnClass} = this.props;
+		const {onDelete, fileName, renderFileItem, title, downloadLink, centering} = this.props;
 		if (renderFileItem)
 			return renderFileItem(this.props);
-		const centering = (columnClass || '').indexOf('col') > -1;
 		return <FileItem title={title}
 						 centering={centering}
 						 downloadLink={downloadLink}
