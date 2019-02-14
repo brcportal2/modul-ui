@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="22px" height="24px" viewBox="0 0 22 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Регистрация-/-вход" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Регистрация-Выбран-другой-город" sketch:type="MSArtboardGroup" transform="translate(-680.000000, -489.000000)" fill="#CCCCCC">
+            <path d="M688.774194,489.195312 C683.922581,489.195312 680,493.202189 680,498.158063 C680,503.113937 683.922581,507.120814 688.774194,507.120814 C690.505355,507.120814 692.109153,506.601787 693.467742,505.720384 L699.806452,512.195312 L702,509.954625 L695.741935,503.57855 C696.867177,502.071671 697.548387,500.202816 697.548387,498.158063 C697.548387,493.202189 693.625806,489.195312 688.774194,489.195312 L688.774194,489.195312 Z M688.774194,491.304195 C692.490323,491.304195 695.483871,494.362075 695.483871,498.158063 C695.483871,501.954052 692.490323,505.011931 688.774194,505.011931 C685.058065,505.011931 682.064516,501.954052 682.064516,498.158063 C682.064516,494.362075 685.058065,491.304195 688.774194,491.304195 L688.774194,491.304195 Z" id="Shape" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

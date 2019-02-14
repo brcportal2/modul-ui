@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="10px" height="15px" viewBox="0 0 10 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>wizard_step_arrow_white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Дашборд" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g sketch:type="MSArtboardGroup" transform="translate(-210.000000, -139.000000)" id="шаги" fill="#FFFFFF">
+            <g sketch:type="MSLayerGroup" transform="translate(202.000000, 102.000000)">
+                <g id="Rectangle-166-+-Rectangle-167-+-Path-598" transform="translate(16.500000, 123.000000) rotate(90.000000) translate(-16.500000, -123.000000) translate(-73.000000, 114.000000)" sketch:type="MSShapeGroup">
+                    <path d="M6.50211591,5.47086558 C7.59073896,7.66910774 7.26733435,12.4754227 15.5117191,12.4754227 L15.5117191,14.5003255 C7.45361365,14.5003255 7.1569011,18.5813802 6.50211591,20.5027669 L6.50211591,5.47086558 Z" id="wizard_step_arrow_white" transform="translate(11.006918, 12.986816) rotate(-90.000000) translate(-11.006918, -12.986816) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

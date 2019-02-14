@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="22px" height="24px" viewBox="0 0 22 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_search_input</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="icon_search_input" sketch:type="MSLayerGroup" fill="#FFFFFF">
+            <g id="Регистрация-/-вход" sketch:type="MSShapeGroup">
+                <g id="Регистрация-Выбран-другой-город">
+                    <path d="M8.774194,0.195312 C3.922581,0.195312 0,4.202189 0,9.158063 C0,14.113937 3.922581,18.120814 8.774194,18.120814 C10.505355,18.120814 12.109153,17.601787 13.467742,16.720384 L19.806452,23.195312 L22,20.954625 L15.741935,14.57855 C16.867177,13.071671 17.548387,11.202816 17.548387,9.158063 C17.548387,4.202189 13.625806,0.195312 8.774194,0.195312 L8.774194,0.195312 L8.774194,0.195312 Z M8.774194,2.304195 C12.490323,2.304195 15.483871,5.362075 15.483871,9.158063 C15.483871,12.954052 12.490323,16.011931 8.774194,16.011931 C5.058065,16.011931 2.064516,12.954052 2.064516,9.158063 C2.064516,5.362075 5.058065,2.304195 8.774194,2.304195 L8.774194,2.304195 L8.774194,2.304195 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
