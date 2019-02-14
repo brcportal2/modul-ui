@@ -31,7 +31,6 @@ export default class Button extends Component {
 			'small',
 			'middle',
 			'full',
-			'wide',
 		]),
 
 		type: PropTypes.oneOf([
@@ -39,12 +38,15 @@ export default class Button extends Component {
 			'reset',
 			'submit'
 		]),
+
+		wide: PropTypes.bool,
 	};
 
 	static defaultProps = {
 		type: 'button',
 		loading: false,
-		disabled: false
+		disabled: false,
+		wide: false,
 	};
 
 	render() {
@@ -57,6 +59,7 @@ export default class Button extends Component {
 			mdSize,
 			icon,
 			innerRef,
+			wide,
 			...props
 		} = this.props;
 
@@ -67,7 +70,8 @@ export default class Button extends Component {
 
 				className={classnames('button', className, mdStyle, mdSize, {
 					loader: loading,
-					[`icon-${icon}`]: Boolean(icon)
+					[`icon-${icon}`]: Boolean(icon),
+					wide: wide,
 				})}
 
 				ref={innerRef}

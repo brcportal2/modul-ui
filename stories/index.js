@@ -8,6 +8,7 @@ import ModulTooltip from './ModulTooltip';
 import Popup from './Popup';
 import Form from './Form';
 import Table from './Table';
+import Tooltip from './Tooltip';
 
 export default () => {
 	Button();
@@ -19,4 +20,5 @@ export default () => {
 	Popup();
 	Form();
 	Table();
+	Tooltip();
 };
