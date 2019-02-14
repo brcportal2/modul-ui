@@ -13,6 +13,7 @@ export default storiesOf('Button', module)
 				<Button
 					loading={boolean('loading', false)}
 					disabled={boolean('disabled', false)}
+					wide={boolean('wide', false)}
 
 					mdStyle={select(
 						'mdStyle',
@@ -44,7 +45,6 @@ export default storiesOf('Button', module)
 							'small',
 							'middle',
 							'full',
-							'wide',
 						],
 
 						undefined

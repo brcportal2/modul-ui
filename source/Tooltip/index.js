@@ -1,4 +1,4 @@
-import Tooltip from "antd/lib/tooltip";
+import Tooltip from "./Tooltip";
 
 export {
 	Tooltip
