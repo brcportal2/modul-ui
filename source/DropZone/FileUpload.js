@@ -28,6 +28,7 @@ export class FileUpload extends React.PureComponent {
 		isDragAccept: PropTypes.bool,
 		isDragReject: PropTypes.bool,
 		onSelectFile: PropTypes.func,//выбран файл
+		onLabelClick: PropTypes.func,
 		onDelete: PropTypes.func, //Удаление файла
 		renderIcon: PropTypes.oneOfType([ //Рендер доп. блоков
 			PropTypes.func,
@@ -111,14 +112,14 @@ export class FileUpload extends React.PureComponent {
 
 	renderEmptyBlock() {
 		const {
-			title, buttonTitle, buttonClass, children, error, renderIcon
+			title, buttonTitle, buttonClass, children, error, renderIcon, onLabelClick
 		} = this.props;
 		return (<React.Fragment>
 			{renderIcon && renderIcon(this.props)}
 			{error && <div class="file_text_error">{error}</div>}
 			<div class="file_title">{title}</div>
 			<div class="file_button">
-				<label class={buttonClass}>
+				<label class={buttonClass} onClick={onLabelClick}>
 					{buttonTitle}
 					{!children && <input type="file" onChange={this._handleSelectFile}/>}
 					{children}

@@ -2,11 +2,11 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
 import StoryLayout from '../StoryLayout';
-import {FileUpload} from "../../source/DropZone";
+import {FileUpload, FileUploadList} from "../../source/DropZone";
 import {FileUploadZone} from "../../source/DropZone/FileUploadZone";
 
 const loading = true;
-
+const vertical = true;
 export default storiesOf('FileUpload', module)
 	.add(
 		'default',
@@ -18,16 +18,14 @@ export default storiesOf('FileUpload', module)
 				<div class="light_text mb20">Сетка</div>
 
 				<div>
-					<class>.file_upload_list > .file_upload_block</class>
 					<example style={{width: '800px'}}>
-						<div class="file_upload_list">
+						<FileUploadList>
 
 							<FileUpload title={(<span><strong>Проект банковской гарантии</strong>согласованный с
 								заказчиком</span>)}/>
 
-							<FileUpload title="Проект банковской гарантии согласованный с заказчиком проект
-									банковской гарантии согласованный с заказчиком проект банковской гарантии
-									согласованный с заказчиком"
+							<FileUpload title="onLabelClick & onSelectFile"
+										onLabelClick={() => console.log('click to label')}
 										onSelectFile={e => console.log(e.target.files)}/>
 
 							<FileUpload title="Проект">
@@ -36,7 +34,7 @@ export default storiesOf('FileUpload', module)
 
 							<FileUploadZone title="File drop zone"
 											onDrop={aceptedFiles => console.log('drop file', aceptedFiles)}
-											onSelectFile={e => console.log('select file', e.target.files)} />
+											onSelectFile={e => console.log('select file', e.target.files)}/>
 
 							<FileUpload fileName="document.rar"
 										onDelete={event => console.log('Удалить файл', event)}
@@ -61,15 +59,14 @@ export default storiesOf('FileUpload', module)
 											{() => (<i class="icon-info c_error"
 													   title="Не удалось подтвердить подлинность электронной подписи. Убедитесь, что загрузили архив с правильным исходным документом и файлом подписи. Если нет — повторно запросите у клиента исходный документ и файл подписи"/>)}
 										error="Подпись не верна"/>
-						</div>
+						</FileUploadList>
 					</example>
 				</div>
 
 				<div class="light_text mb20 mt20">Список</div>
 				<div>
-					<class>.file_upload_list.vertical > .file_upload_block</class>
 					<example>
-						<div class="file_upload_list vertical">
+						<FileUploadList vertical={vertical}>
 
 							<FileUpload title={(<span><strong>Проект банковской гарантии</strong>согласованный с
 								заказчиком</span>)}/>
@@ -110,7 +107,7 @@ export default storiesOf('FileUpload', module)
 													   title="Не удалось подтвердить подлинность электронной подписи. Убедитесь, что загрузили архив с правильным исходным документом и файлом подписи. Если нет — повторно запросите у клиента исходный документ и файл подписи"/>)}
 										error="Подпись не верна"/>
 
-						</div>
+						</FileUploadList>
 					</example>
 				</div>
 
