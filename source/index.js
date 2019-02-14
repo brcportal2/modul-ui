@@ -13,7 +13,7 @@ import NumberFormat from './NumberFormat';
 import Popup from './Popup';
 import Select from './Select';
 import ModulTooltip from './ModulTooltip';
-import DropZone from './DropZone';
+import DropZone, {FileUpload, FileUploadList, FileUploadZone} from './DropZone';
 
 import Checkbox from './Checkbox';
 import Radio from './Radio';
@@ -44,4 +44,7 @@ export {
 	ClosablePopover,
 	withClosablePopover,
 	Notify,
+	FileUpload,
+	FileUploadList,
+	FileUploadZone,
 };
