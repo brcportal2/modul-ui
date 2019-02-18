@@ -17,6 +17,7 @@ export default class DashboardContainer extends Component {
 					<li><Link to='/popups'>Popups</Link></li>
 					<li><Link to='/modultooltip'>ModulTooltip</Link></li>
 					<li><Link to='/tabs'>Tabs</Link></li>
+					<li><Link to='/radio'>Radio</Link></li>
 				</ul>
 			</div>
 		);

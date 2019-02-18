@@ -19,7 +19,7 @@ import Radio from './Radio';
 import Popover, {ClosablePopover, withClosablePopover} from './Popover';
 import Notify from './Notify';
 import Tooltip from './Tooltip';
-
+import Tabs from './Tabs';
 
 export {
 	AmountFormat,
@@ -45,4 +45,5 @@ export {
 	withClosablePopover,
 	Notify,
 	Tooltip,
+	Tabs,
 };
