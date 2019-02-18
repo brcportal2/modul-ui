@@ -8,13 +8,10 @@ import {FileUploadZone} from "../../source/DropZone/FileUploadZone";
 const loading = true;
 const vertical = true;
 
-const handleFileSelect = (e, checkFiles) => {
-	try {
-		checkFiles(e.target.files);
-		console.log('upload files', e.target.files);
-	} catch (er) {
-		alert(er.message);
-	}
+const handleFileSelect = (e, getCheckedFiles) => {
+	const {acceptedFiles, rejectedFiles} = getCheckedFiles(e.target.files);
+	console.log('acceptedFiles', acceptedFiles);
+	console.log('rejectedFiles', rejectedFiles);
 };
 
 export default storiesOf('FileUpload', module)
@@ -35,16 +32,18 @@ export default storiesOf('FileUpload', module)
 								заказчиком</span>)}/>
 
 							<FileUpload title="onLabelClick & onSelectFile"
+										accept=".png"
+										maxSize={10}
 										onLabelClick={() => console.log('click to label')}
-										onSelectFile={e => console.log(e.target.files)}/>
+										onSelectFile={(e, acceptedFiles) => console.log('acceptedFiles', acceptedFiles)}/>
 
-							<FileUpload title="Проект (accept='(jpe?g|png)', 1Мб)"
-										accept="(jpe?g|png)"
-										maxSize={9}
-										renderInput={({checkFiles}) => (<input
+							<FileUpload title="Проект (accept='.jpg,.jpeg)', 1Мб)"
+										accept=".jpeg,.jpg,.png"
+										maxSize={10}
+										renderInput={({getCheckedFiles}) => (<input
 											type="file"
 											multiple
-											onChange={e => handleFileSelect(e, checkFiles)}/>)}/>
+											onChange={e => handleFileSelect(e, getCheckedFiles)}/>)}/>
 
 							<FileUploadZone title="File drop zone"
 											onDrop={aceptedFiles => console.log('drop file', aceptedFiles)}

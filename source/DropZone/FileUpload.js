@@ -2,8 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {FileItem} from "./FileItem";
-
-const wrongTypeFiles = "(ade|adp|bat|chm|cmd|com|cpl|exe|hta|ins|isp|jse|lib|lnk|mde|msc|msp|mst|pif|scr|sct|shb|sys|vb|vbe|vbs|vxd|wsc|wsf|wsh)";
+import {fileAccepted, fileMatchSize, wrongFileType} from "./utils/uploadUtils";
 
 /**
  * Вторая версия компонента
@@ -48,11 +47,19 @@ export class FileUpload extends React.PureComponent {
 			PropTypes.func,
 		]),
 		dragCssClass: PropTypes.object,
-		accept: PropTypes.oneOfType([ //Разрешенные типы файла
-			PropTypes.string,
-			PropTypes.array,
-		]),
+		/**
+		 * Allow specific types of files. See https://github.com/okonet/attr-accept for more information.
+		 * Keep in mind that mime type determination is not reliable across platforms. CSV files,
+		 * for example, are reported as text/plain under macOS but as application/vnd.ms-excel under
+		 * Windows. In some cases there might not be a mime type set at all.
+		 * See: https://github.com/react-dropzone/react-dropzone/issues/276
+		 */
+		accept: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
 		maxSize: PropTypes.number,
+		minSize: PropTypes.number,
+		multiple: PropTypes.bool,
+		name: PropTypes.string,
+		inputProps: PropTypes.object,
 	};
 
 	static defaultProps = {
@@ -68,7 +75,10 @@ export class FileUpload extends React.PureComponent {
 		centering: true,
 		wrongTypes: null,
 		accept: null,
-		maxSize: null,
+		maxSize: Infinity,
+		minSize: 0,
+		multiple: false,
+		inputProps: {},
 	};
 
 	get inProgress() {
@@ -109,30 +119,43 @@ export class FileUpload extends React.PureComponent {
 
 	_handleSelectFile = event => {
 		const {onSelectFile} = this.props;
-		this.checkFiles(event.target.files);
-		onSelectFile && onSelectFile(event);
+		const {acceptedFiles, rejectedFiles} = this.getCheckedFiles(event.target.files);
+		onSelectFile && onSelectFile(event, acceptedFiles, rejectedFiles);
 	};
 
-	checkFiles = files => {
-		const {maxSize, accept} = this.props;
-		if (files && files.length > 0) {
-			[].slice.call(files).forEach(file => {
-				const extension = this.getFileExtension(file);
-				if (new RegExp(wrongTypeFiles, 'ig').test(extension)) {
-					throw {message: 'wrongFileTypes'};
-				} else if (accept && !(new RegExp(accept, 'ig').test(extension))) {
-					throw {message: 'acceptFileTypes'};
-				} else if (!!maxSize && file.size > maxSize * 1024 * 1024) {
-					throw {message: 'maxFileSize'};
-				}
-			});
+	getCheckedFiles = fileList => {
+		const {maxSize, minSize, accept, multiple} = this.props;
+		const acceptedFiles = [];
+		const rejectedFiles = [];
+
+		Array.prototype.slice.call(fileList).forEach(file => {
+			if (!fileAccepted(file, accept)) {
+				rejectedFiles.push({
+					resolution: 'acceptFileTypes',
+					file: file
+				});
+			} else if (wrongFileType(file)) {
+				rejectedFiles.push({
+					resolution: 'acceptFileTypes',
+					file: file
+				});
+			}
+			else if (!fileMatchSize(file, maxSize, minSize)) {
+				rejectedFiles.push({
+					resolution: 'maxFileSize',
+					file: file
+				});
+			}
+			else {
+				acceptedFiles.push(file);
+			}
+		});
+
+		if (!multiple && acceptedFiles.length > 1) {
+			rejectedFiles.push(...acceptedFiles.splice(0));
 		}
+		return {acceptedFiles, rejectedFiles};
 	};
-
-	getFileExtension(file) {
-		const fileSeparator = file.name.split('.');
-		return fileSeparator.length > 1 ? fileSeparator[fileSeparator.length - 1] : '';
-	}
 
 	renderProgress() {
 		const {progress, renderProgress} = this.props;
@@ -147,8 +170,22 @@ export class FileUpload extends React.PureComponent {
 
 	renderEmptyBlock() {
 		const {
-			title, buttonTitle, buttonClass, error, renderIcon, onLabelClick, renderInput,
+			title, buttonTitle, accept, buttonClass, error, renderIcon, onLabelClick, renderInput,
+			multiple, inputProps, name,
 		} = this.props;
+		const inputAttributes = {
+			accept,
+			type: 'file',
+			multiple: multiple,
+			ref: this.setRefs,
+			onChange: this._handleSelectFile,
+			autoComplete: 'off'
+		};
+
+		if (name && name.length) {
+			inputAttributes.name = name;
+		}
+
 		return (<React.Fragment>
 			{renderIcon && renderIcon(this.props)}
 			{error && <div class="file_text_error">{error}</div>}
@@ -156,8 +193,8 @@ export class FileUpload extends React.PureComponent {
 			<div class="file_button">
 				<label class={buttonClass} onClick={onLabelClick}>
 					{buttonTitle}
-					{!renderInput && <input type="file" onChange={this._handleSelectFile}/>}
-					{!!renderInput && renderInput({...this.props, checkFiles: this.checkFiles})}
+					{!renderInput && <input {...inputProps} {...inputAttributes}/>}
+					{!!renderInput && renderInput({...this.props, getCheckedFiles: this.getCheckedFiles})}
 				</label>
 			</div>
 		</React.Fragment>);
