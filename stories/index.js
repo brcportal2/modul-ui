@@ -9,6 +9,7 @@ import Popup from './Popup';
 import Form from './Form';
 import Table from './Table';
 import Tooltip from './Tooltip';
+import Tabs from './Tabs';
 
 export default () => {
 	Button();
@@ -21,4 +22,5 @@ export default () => {
 	Form();
 	Table();
 	Tooltip();
+	Tabs();
 };

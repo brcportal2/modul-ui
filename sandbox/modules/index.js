@@ -8,7 +8,7 @@ import * as Select from './select';
 import * as Drop from './drop';
 import * as Popups from './popups';
 import * as ModulTooltip from './modulTooltip';
-
+import * as Tabs from './tabs';
 
 export default [
 	Dashboard,
@@ -21,4 +21,5 @@ export default [
 	Drop,
 	Popups,
 	ModulTooltip,
+	Tabs,
 ];

@@ -1,0 +1,66 @@
+@require 'nib'
+@require '~modul.markup.ui-kit/markup/stylus/variables'
+
+$prefix-tabs = ant-tabs;
+
+// Общая обретка
+.{$prefix-tabs}
+	position relative
+	overflow hidden
+
+// Панелька с названиями табов
+.{$prefix-tabs}-bar
+	display flex
+	flex-wrap nowrap
+	margin-bottom 32px
+	box-shadow 0 2px 0 $cl-graphite-6
+
+.{$prefix-tabs}-nav-wrap
+	overflow hidden
+
+.{$prefix-tabs}-nav-scroll
+	overflow hidden
+	white-space nowrap
+
+.{$prefix-tabs}-nav
+	display inline-block
+	
+.{$prefix-tabs}-tab
+	display inline-block
+	padding-bottom 8px
+	cursor pointer
+
+	&:not(:last-child)
+		margin-right 32px
+
+.{$prefix-tabs}-tab-active
+	position relative
+	color $cl-blue-1
+	
+	&::after
+		content ''
+		position absolute
+		bottom 0
+		left 0
+		display block
+		width 100%
+		height 3px
+		background-color $cl-blue-1
+		z-index 1
+
+
+// Стрелки переключения между табами
+.{$prefix-tabs}-tab-prev
+.{$prefix-tabs}-tab-next
+	display none
+
+
+// Обертка всех табов
+.ant-tabs-content
+	display flex
+	width 100%
+
+// Контент табов
+.ant-tabs-tabpane
+	flex-shrink 0
+	width 100%
