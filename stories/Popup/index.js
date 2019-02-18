@@ -37,7 +37,17 @@ export default storiesOf('Popup', module)
 		},
 
 		{info: {text: `
-		import {ConfirmPopup} from 'modul-ui';
+~~~js
+import {ConfirmPopup} from 'modul-ui';
+~~~
+
+Применение через ref
+
+~~~js
+<ConfirmPopup ref={node => this.confirmRef = node} />
+
+confirmRef.open().then(() => alert('confirm'))
+~~~
 		`}}
 	)
 
@@ -68,6 +78,17 @@ export default storiesOf('Popup', module)
 		},
 
 		{info: {text: `
-		import {ContentPopup} from 'modul-ui';
+~~~js
+import {ContentPopup} from 'modul-ui';
+~~~
+
+Применение через ref
+
+~~~js
+<ContentPopup ref={node => this.contentRef = node} />
+
+contentRef.open()
+contentRef.handleCloseMethod()
+~~~
 		`}}
 	);
