@@ -1,4 +1,4 @@
-/* eslint-disable indent,no-console,react/jsx-tag-spacing */
+/* eslint-disable indent,no-console,react/jsx-tag-spacing,no-alert */
 import React from 'react';
 import {storiesOf} from '@storybook/react';
 import StoryLayout from '../StoryLayout';
@@ -7,6 +7,16 @@ import {FileUploadZone} from "../../source/DropZone/FileUploadZone";
 
 const loading = true;
 const vertical = true;
+
+const handleFileSelect = (e, checkFiles) => {
+	try {
+		checkFiles(e.target.files);
+		console.log('upload files', e.target.files);
+	} catch (er) {
+		alert(er.message);
+	}
+};
+
 export default storiesOf('FileUpload', module)
 	.add(
 		'default',
@@ -28,13 +38,20 @@ export default storiesOf('FileUpload', module)
 										onLabelClick={() => console.log('click to label')}
 										onSelectFile={e => console.log(e.target.files)}/>
 
-							<FileUpload title="Проект">
-								<input type="file" multiple onChange={e => console.log(e.target.files)}/>
-							</FileUpload>
+							<FileUpload title="Проект (accept='(jpe?g|png)', 1Мб)"
+										accept="(jpe?g|png)"
+										maxSize={9}
+										renderInput={({checkFiles}) => (<input
+											type="file"
+											multiple
+											onChange={e => handleFileSelect(e, checkFiles)}/>)}/>
 
 							<FileUploadZone title="File drop zone"
 											onDrop={aceptedFiles => console.log('drop file', aceptedFiles)}
 											onSelectFile={e => console.log('select file', e.target.files)}/>
+
+							<FileUpload title="progress"
+										progress={10}/>
 
 							<FileUpload fileName="document.rar"
 										onDelete={event => console.log('Удалить файл', event)}

@@ -31,7 +31,7 @@ export class FileItem extends React.PureComponent {
 	renderFileName() {
 		const {fileName, downloadLink} = this.props;
 		if (downloadLink)
-			return (<a class="link">{fileName}</a>);
+			return (<a class="link" href={downloadLink}>{fileName}</a>);
 		return fileName;
 	}
 
