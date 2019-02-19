@@ -14,13 +14,12 @@ export class FileUploadZone extends React.PureComponent {
 
 	render() {
 		const {children, ...props} = this.props;
+		const hideInput=true;
 		return (<Dropzone
 			style={removeStyles}
 			{...props}>
 			{({...dropProps}) => (
-				<FileUpload {...props} {...dropProps}>
-					<div></div>
-				</FileUpload>)}
+				<FileUpload {...props} {...dropProps} hideInput={hideInput} />)}
 		</Dropzone>);
 	}
 }

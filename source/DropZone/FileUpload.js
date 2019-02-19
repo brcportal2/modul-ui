@@ -60,6 +60,7 @@ export class FileUpload extends React.PureComponent {
 		multiple: PropTypes.bool,
 		name: PropTypes.string,
 		inputProps: PropTypes.object,
+		hideInput: PropTypes.bool, //если используем DropZone то он сам вставляет <input/> по этому здесь инпут не нужен
 	};
 
 	static defaultProps = {
@@ -171,7 +172,7 @@ export class FileUpload extends React.PureComponent {
 	renderEmptyBlock() {
 		const {
 			title, buttonTitle, accept, buttonClass, error, renderIcon, onLabelClick, renderInput,
-			multiple, inputProps, name,
+			multiple, inputProps, name, hideInput,
 		} = this.props;
 		const inputAttributes = {
 			accept,
@@ -193,7 +194,7 @@ export class FileUpload extends React.PureComponent {
 			<div class="file_button">
 				<label class={buttonClass} onClick={onLabelClick}>
 					{buttonTitle}
-					{!renderInput && <input {...inputProps} {...inputAttributes}/>}
+					{!renderInput && !hideInput && <input {...inputProps} {...inputAttributes}/>}
 					{!!renderInput && renderInput({...this.props, getCheckedFiles: this.getCheckedFiles})}
 				</label>
 			</div>
