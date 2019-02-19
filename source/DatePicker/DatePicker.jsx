@@ -40,6 +40,7 @@ export default class DatePicker extends Component {
 	static displayName = 'DatePicker';
 
 	static propTypes = {
+		className: PropTypes.string,
 		autoComplete: PropTypes.string,
 		name: PropTypes.string,
 		onChange: PropTypes.func,
@@ -131,6 +132,15 @@ export default class DatePicker extends Component {
 		}
 
 		this.$input = $input.datetimepicker(options);
+	}
+
+	componentDidUpdate(prevProps) {
+		const update = datePickerOptions.find(key => {
+			return key !== 'value' && prevProps[key] !== this.props[key];
+		});
+		if (this.$input && update) {
+			this.$input.datetimepicker('setOptions', this.getDatePickerOptions());
+		}
 	}
 
 	setFocus() {
