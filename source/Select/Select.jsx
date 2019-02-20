@@ -2,6 +2,7 @@
 import Selector, {Creatable, Async, AsyncCreatable} from 'react-select';
 import React from 'react';
 import PropTypes from  'prop-types';
+import classNames from 'classnames';
 
 const stringOrNode = PropTypes.oneOfType([
 	PropTypes.string,
@@ -116,7 +117,7 @@ class Select extends React.Component {
 					/>
 				</div>);
 		} else {
-			return (<div {...tooltipProps}>
+			return (<div {...tooltipProps}  className={classNames(tooltipProps.className, wrapperClassName)}>
 				<Selector ref={s => this.el = s}
 						  {...props}
 						  {...additionalProps}
