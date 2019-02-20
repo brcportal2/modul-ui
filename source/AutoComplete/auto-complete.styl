@@ -1,5 +1,5 @@
 @require 'nib'
-@require '~modul.markup.ui-kit/markup/stylus/variables'
+// @require '~modul.markup.ui-kit/markup/stylus/variables'
 
 $prefix-ant-select = 'ant-select'
 
@@ -8,9 +8,11 @@ $prefix-ant-select = 'ant-select'
 	margin 0
 	padding 0
 	box-sizing border-box
-	background-color $cl-white
+	// background-color $cl-white
+	background-color #FFFFFF
 	border-radius 4px
-	box-shadow $shadow-1
+	// box-shadow $shadow-1
+	box-shadow 0 4px 14px rgba(#243036, .05)
 	z-index 100
 
 .{$prefix-ant-select}-dropdown-menu
@@ -28,11 +30,11 @@ $prefix-ant-select = 'ant-select'
 	cursor pointer
 
 	&:hover
-		background-color $cl-graphite-7
-		border-bottom-color $cl-graphite-6
+		background-color #F5F5F6
+		border-bottom-color #E6E8E9
 	
 	&:not(:last-child)
-		border-bottom 1px solid $cl-graphite-6
+		border-bottom 1px solid #E6E8E9
 	
 	&:first-child
 		border-top-left-radius 4px
@@ -44,8 +46,8 @@ $prefix-ant-select = 'ant-select'
 
 
 .{$prefix-ant-select}-dropdown-menu-item-active
-	background-color $cl-graphite-7
-	border-bottom-color $cl-graphite-6
+	background-color #F5F5F6
+	border-bottom-color #E6E8E9
 
 
 .{$prefix-ant-select}-dropdown-hidden
