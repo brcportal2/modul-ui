@@ -1,0 +1,131 @@
+@require 'nib'
+@require '~modul.markup.ui-kit/markup/stylus/variables'
+
+
+// ТУЛТИПЫ
+// ===============================================
+
+// ОБЕРТКА
+.ant-tooltip
+	position absolute
+	animation-name anim-tooltip-in
+	animation-duration .1s
+	animation-timing-function ease-in-out
+	z-index $ant-tooltip-z-index
+
+	// ПОЗИЦИОНКА
+	// TODO Настроить позиционку стрелки в нецентрированных случаях (прим. rightTop)
+	// Сверху
+	&.ant-tooltip-placement-top
+		padding-bottom $ant-tooltip-placement-offset
+
+		.ant-tooltip-arrow
+			bottom 0
+			left 50%
+			transform translate(-50%, 100%)
+
+	// Справа
+	&.ant-tooltip-placement-right
+		padding-left $ant-tooltip-placement-offset
+
+		.ant-tooltip-arrow
+			top 50%
+			left 0
+			transform translate(-100%, -50%) rotate(90deg)
+	
+	// Снизу
+	&.ant-tooltip-placement-bottom
+		padding-top $ant-tooltip-placement-offset
+
+		.ant-tooltip-arrow
+			top 0
+			left 50% 
+			transform translate(-50%, -100%) rotate(180deg)
+	
+	// Слева
+	&.ant-tooltip-placement-left
+		padding-right $ant-tooltip-placement-offset
+
+		.ant-tooltip-arrow
+			top 50%
+			right 0
+			transform translate(100%, -50%) rotate(-90deg)
+
+
+	// РАЗМЕРЫ
+	// Очень большой - максимум 950px
+	&._xl
+		.ant-tooltip-content
+			max-width 950px
+
+	// Большой - максимум 400px
+	&._lg
+		.ant-tooltip-content
+			max-width 400px
+
+	// Средний - максимум 330px
+	&._md
+		.ant-tooltip-content
+			max-width 330px
+
+	// Маленький - максимум 240px
+	&._sm
+		.ant-tooltip-content
+			max-width 230px
+
+
+	// ЦВЕТА ФОНА
+	// Ошибка
+	&._error
+		.ant-tooltip-content
+			background-color $cl-red-4
+
+		.ant-tooltip-arrow
+			background-image url(../images/tooltip-arrow-error.svg)
+
+	// Белый
+	&._white
+		.ant-tooltip-content
+			color $cl-text
+			background-color $cl-white
+
+		.ant-tooltip-arrow
+			background-image url(../images/tooltip-arrow-white.svg)
+	
+	
+	// АНИМАЦИЯ СКРЫТИЯ
+	&[class*="-leave"]
+		animation-name anim-tooltip-out
+		animation-duration .1s
+		animation-timing-function ease-in-out
+
+
+.ant-tooltip-hidden
+	display none
+
+
+// КОНТЕНТ
+.ant-tooltip-content
+	padding 8px 8px
+	box-sizing border-box
+	max-width 270px
+	min-width 40px
+	min-height @min-width
+	letter-spacing normal
+	font-size $fz-xsmall
+	color $ant-tooltip-color
+	background-color $ant-tooltip-background-color
+	border-radius $ant-tooltip-border-radius
+	box-shadow $shadow-2
+
+// СТРЕЛКА
+.ant-tooltip-arrow
+	position absolute
+	width $ant-tooltip-arrow-width
+	height @width
+	background-image url(../images/tooltip-arrow.svg)
+	background-repeat no-repeat
+	background-position 0 0
+	pointer-events none
+
+

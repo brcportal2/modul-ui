@@ -1,3 +1,4 @@
+import './ant-tooltip.styl';
 import React from "react";
 import PropTypes from "prop-types";
 import Tooltip from "antd/lib/tooltip";
