@@ -82,6 +82,7 @@ class Select extends React.Component {
 		wrapperStyle: PropTypes.object,       // optional style to apply to the component wrapper
 		creatable: PropTypes.bool, 			  // если можно вводить свой вариант (текст)
 		tooltipProps: PropTypes.object,       // для пробрасывания нужных пропсов в тултип
+		wrapperClassName: PropTypes.string,   // класс для обёртки с div
 	};
 
 	render() {
@@ -93,6 +94,7 @@ class Select extends React.Component {
 			promptTextCreator = label => `Создать: ${label}`,
 			onBlurResetsInput = false,
 			tooltipProps,
+			wrapperClassName,
 			...props
 		} = this.props;
 		const additionalProps = {onBlurResetsInput, openOnFocus, noResultsText, searchable};
@@ -105,7 +107,7 @@ class Select extends React.Component {
 				SelectComponent = creatable ?  Creatable : Async;
 			}
 			return (
-				<div {...tooltipProps}>
+				<div {...tooltipProps} className={classNames(tooltipProps.className, wrapperClassName)}>
 					<SelectComponent ref={s => this.el = s}
 									 promptTextCreator={promptTextCreator}
 									 {...props}
