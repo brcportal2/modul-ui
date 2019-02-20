@@ -1,6 +1,6 @@
 {
   "name": "modul-ui",
-  "version": "0.0.29-beta.16",
+  "version": "0.0.29-beta.17",
   "description": "ModulBank UI React Components",
   "main": "./lib",
   "module": "./source",
